@@ -1,0 +1,1209 @@
+/* ================================================================
+   EDITORIAL BURGUNDY STATIONERY THEME
+   Inspired by the supplied wedding-card reference while retaining
+   the original Moody botanical background and existing functionality.
+   This file loads last and controls the final visual appearance.
+   ================================================================ */
+
+:root {
+    --card-burgundy: #5a0828;
+    --card-burgundy-dark: #350619;
+    --card-wine: #78183a;
+    --card-blush: #c18a99;
+    --card-eggshell: #f3f0e5;
+    --card-ivory: var(--card-eggshell);
+    --card-paper: rgba(243, 240, 229, 0.97);
+    --card-rose-paper: #eadadd;
+    --card-ink: #2f2428;
+    --card-muted: #74666b;
+    --card-line: rgba(90, 8, 40, 0.28);
+    --invitation-width: 620px;
+}
+
+/* 01. PAGE SHELL AND BACKGROUND */
+body {
+    background: transparent;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.72);
+}
+
+#mainBackground {
+    width: min(100%, 1100px);
+    background-position: center top;
+}
+
+#main-content {
+    background: var(--card-paper);
+    box-shadow: 0 0 55px rgba(17, 8, 12, 0.46);
+}
+
+/* 02. OPENING SEAL */
+.invitation-seal {
+    border-color: rgba(244, 225, 210, 0.74);
+    color: #fff8ee;
+    background: radial-gradient(circle at 40% 32%, #861c45, var(--card-burgundy) 55%, var(--card-burgundy-dark));
+    box-shadow: 0 0 0 8px rgba(90, 8, 40, 0.22), 0 20px 60px rgba(0, 0, 0, 0.52);
+}
+
+.invitation-seal::before {
+    border-color: rgba(249, 224, 196, 0.5);
+}
+
+.invitation-seal::after {
+    border-color: rgba(249, 224, 196, 0.36);
+}
+
+/* 03. COVER AS A FORMAL INVITATION CARD */
+.hero {
+    padding-right: clamp(18px, 5vw, 52px);
+    padding-left: clamp(18px, 5vw, 52px);
+    background: var(--card-eggshell);
+}
+
+.hero-text {
+    position: relative;
+    max-width: 500px;
+    padding: clamp(48px, 8vw, 78px) clamp(24px, 7vw, 58px);
+    overflow: visible;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+    clip-path: none;
+}
+
+.hero-text::before,
+.hero-text::after {
+    display: none;
+}
+
+.hero .scroll-cue {
+    display: none;
+}
+
+.hero::after {
+    content: '◆';
+    width: min(180px, 46%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 18px auto 0;
+    color: var(--card-burgundy);
+    font-size: 0.48rem;
+    background:
+        linear-gradient(var(--card-line), var(--card-line)) left center / 42% 1px no-repeat,
+        linear-gradient(var(--card-line), var(--card-line)) right center / 42% 1px no-repeat;
+}
+
+.bismillah-img {
+    filter: sepia(1) saturate(2.3) hue-rotate(295deg) brightness(0.58);
+}
+
+.cover-kicker,
+.cover-date,
+.cover-venue,
+.scroll-cue,
+.floating-text {
+    color: var(--card-ink) !important;
+}
+
+.cover-kicker,
+.cover-venue,
+.scroll-cue {
+    color: var(--card-muted) !important;
+}
+
+.couple-stack {
+    color: var(--card-burgundy) !important;
+}
+
+.couple-stack-amp,
+.cover-divider {
+    color: var(--card-burgundy) !important;
+}
+
+.countdown-grid {
+    margin-top: 28px;
+}
+
+.flip-card {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.flip-value {
+    color: var(--card-ink);
+    font-family: 'Prata', serif;
+}
+
+.countdown-label {
+    color: var(--card-wine);
+}
+
+.countdown-separator {
+    color: var(--card-blush);
+}
+
+/* 04. SECTION WRAPPERS AND PAPER PANELS */
+.section-container {
+    padding-right: clamp(18px, 5vw, 46px);
+    padding-left: clamp(18px, 5vw, 46px);
+}
+
+.section-container::after {
+    content: '◆';
+    width: min(180px, 46%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 22px auto 0;
+    color: var(--card-burgundy);
+    font-size: 0.48rem;
+    background: linear-gradient(var(--card-line), var(--card-line)) left center / 42% 1px no-repeat,
+                linear-gradient(var(--card-line), var(--card-line)) right center / 42% 1px no-repeat;
+}
+
+/*
+   Coloured paper breaks
+   The irregular polygon edges echo torn stationery while the sections
+   continue to touch, keeping the invitation visually seamless.
+*/
+#programme-section,
+#wishes-section {
+    isolation: isolate;
+    margin: 12px 0;
+    padding-top: clamp(48px, 7vw, 66px);
+    padding-bottom: clamp(48px, 7vw, 66px);
+    clip-path: polygon(
+        0 16px, 7% 11px, 15% 18px, 24% 9px, 34% 15px, 44% 8px,
+        55% 17px, 65% 10px, 76% 16px, 87% 8px, 100% 14px,
+        100% calc(100% - 15px), 91% calc(100% - 9px),
+        81% calc(100% - 17px), 70% calc(100% - 10px),
+        59% calc(100% - 16px), 48% calc(100% - 8px),
+        37% calc(100% - 15px), 25% calc(100% - 9px),
+        13% calc(100% - 17px), 0 calc(100% - 11px)
+    );
+}
+
+#programme-section {
+    color: var(--card-ivory);
+    background:
+        radial-gradient(circle at 105% 12%, rgba(255, 255, 255, 0.09), transparent 30%),
+        linear-gradient(145deg, var(--card-wine), var(--card-burgundy-dark));
+}
+
+#programme-section .glass-card h3,
+#programme-section .schedule-time,
+#programme-section .schedule-desc {
+    color: var(--card-ivory) !important;
+}
+
+#programme-section .schedule-item {
+    border-bottom-color: rgba(255, 248, 238, 0.24);
+}
+
+#programme-section::after {
+    color: rgba(255, 248, 238, 0.72);
+    background:
+        linear-gradient(currentColor, currentColor) left center / 42% 1px no-repeat,
+        linear-gradient(currentColor, currentColor) right center / 42% 1px no-repeat;
+}
+
+#programme-section .programme-rsvp-btn {
+    color: var(--card-burgundy);
+    background: var(--card-ivory);
+    border-color: rgba(255, 255, 255, 0.76);
+    box-shadow: 0 8px 22px rgba(23, 2, 10, 0.28);
+}
+
+#wishes-section {
+    background:
+        radial-gradient(circle at -5% 85%, rgba(255, 255, 255, 0.38), transparent 34%),
+        var(--card-rose-paper);
+}
+
+#gift-section {
+    padding-top: clamp(34px, 5vw, 48px);
+    padding-bottom: clamp(34px, 5vw, 48px);
+}
+
+.section-container > h2 {
+    width: auto;
+    margin: 0 auto 14px;
+    padding: 9px 24px 11px;
+    color: var(--card-ivory);
+    background: var(--card-burgundy);
+    border-radius: 999px;
+    box-shadow: 0 9px 25px rgba(53, 6, 25, 0.3);
+    font-size: clamp(1.15rem, 4vw, 1.65rem);
+}
+
+.section-container > h2::after {
+    display: none;
+}
+
+.glass-card,
+.guestbook-card {
+    position: relative;
+    overflow: visible;
+    color: var(--card-ink);
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    box-shadow: none;
+    clip-path: none;
+}
+
+.glass-card::before,
+.guestbook-card::before {
+    display: none;
+}
+
+.glass-card h3,
+.guestbook-card h3,
+.glass-card .gold,
+.guestbook-card .gold {
+    color: var(--card-burgundy) !important;
+}
+
+.glass-card p,
+.guestbook-card p {
+    color: var(--card-muted);
+}
+
+/* 05. INVITATION WORDING SECTION */
+.invitation-details-section {
+    padding-bottom: 18px;
+    background: var(--card-eggshell);
+}
+
+.invitation-details-section::after {
+    margin-top: 12px;
+}
+
+.invitation-parents {
+    margin: 24px 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+}
+
+.couple-name,
+.pengantin-name,
+.couple-amp,
+.pengantin-amp {
+    color: var(--card-burgundy) !important;
+}
+
+/* 06. WEDDING DETAILS AND PROGRAMME */
+.invitation-event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 42px;
+    padding: 0;
+    text-align: center;
+    background: transparent !important;
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+.invitation-event-details .address-block,
+.invitation-event-details .date-block,
+.invitation-event-details .time-block,
+.invitation-event-details .actions {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: var(--card-ink);
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0;
+    outline: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none;
+}
+
+.invitation-event-details::before,
+.invitation-event-details::after,
+.invitation-event-details .address-block::before,
+.invitation-event-details .address-block::after,
+.invitation-event-details .date-block::before,
+.invitation-event-details .date-block::after,
+.invitation-event-details .time-block::before,
+.invitation-event-details .time-block::after {
+    display: none !important;
+    content: none !important;
+}
+
+.event-detail-label {
+    margin-bottom: 7px;
+    color: var(--card-burgundy);
+    font-family: 'Spartan', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+}
+
+.invitation-event-details .address-line,
+.invitation-event-details .date-title,
+.invitation-event-details .date-time {
+    color: var(--card-ink);
+    font-family: 'Spartan', sans-serif !important;
+    font-size: clamp(0.88rem, 2.8vw, 1rem);
+    font-weight: 400;
+    line-height: 1.65;
+}
+
+.invitation-event-details .muted {
+    color: var(--card-muted);
+}
+
+.invitation-event-details .time-block {
+    margin-top: 28px;
+}
+
+.date-block,
+.address-block {
+    color: var(--card-ink);
+    background: rgba(90, 8, 40, 0.035);
+    border: 1px solid var(--card-line);
+    border-radius: 0;
+}
+
+.date-title,
+.schedule-time {
+    color: var(--card-burgundy);
+}
+
+.schedule-list {
+    position: relative;
+    padding-left: 0;
+}
+
+.schedule-item {
+    position: relative;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(90, 8, 40, 0.15);
+    border-radius: 0;
+}
+
+.schedule-item:last-child {
+    border-bottom: 0;
+}
+
+/* 07. BURGUNDY PILL BUTTONS */
+.btn-nav,
+.btn-small,
+.btn-submit,
+.programme-rsvp-btn,
+.save-date-row .btn-nav {
+    color: #fffaf4;
+    background: linear-gradient(180deg, var(--card-wine), var(--card-burgundy));
+    border: 1px solid rgba(53, 6, 25, 0.72);
+    border-radius: 999px;
+    box-shadow: 0 7px 18px rgba(90, 8, 40, 0.22);
+}
+
+.btn-nav:hover,
+.btn-small:hover,
+.btn-submit:hover,
+.programme-rsvp-btn:hover {
+    color: #fff;
+    background: var(--card-burgundy-dark);
+    transform: translateY(-1px);
+}
+
+/* 08. DIGITAL GIFT AS AN ENVELOPE-INSPIRED PANEL */
+#gift-section .glass-card {
+    padding-bottom: 34px;
+}
+
+#gift-section .glass-card::after {
+    display: none;
+}
+
+/* 09. ATTENDANCE AND MANUAL WISHES FEED */
+.guestbook-card > h3 {
+    font-family: 'Sacramento', cursive !important;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.guestbook-name {
+    color: var(--card-burgundy);
+}
+
+.guestbook-scroll-entry .guestbook-slide-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    padding: 12px 8px;
+    color: var(--card-ink);
+    text-align: center;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.guestbook-scroll-entry .guestbook-message {
+    color: var(--card-muted);
+    font-family: 'Spartan', sans-serif;
+    font-size: clamp(0.88rem, 2.8vw, 1rem);
+    font-style: italic;
+    line-height: 1.65;
+    border-left: 0;
+    padding-left: 0;
+}
+
+.guestbook-scroll-entry .guestbook-name {
+    color: var(--card-ink);
+    font-family: 'Spartan', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.guestbook-scroll-entry + .guestbook-scroll-entry {
+    margin-top: 8px;
+}
+
+/* 10. POPUP MODALS */
+.qr-modal {
+    background: rgba(22, 10, 15, 0.82);
+    backdrop-filter: blur(9px);
+}
+
+.qr-modal-content {
+    color: var(--card-ink);
+    background: var(--card-ivory);
+    border: 1px solid rgba(90, 8, 40, 0.5);
+    border-radius: 0;
+    outline: 5px double rgba(90, 8, 40, 0.2);
+    outline-offset: -12px;
+    clip-path: polygon(14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px), 0 14px);
+}
+
+.qr-modal-close {
+    color: var(--card-burgundy);
+}
+
+.qr-modal-content h3,
+.location-venue-name {
+    color: var(--card-burgundy) !important;
+}
+
+.rsvp-modal-content input,
+.rsvp-modal-content select,
+.rsvp-modal-content textarea {
+    color: var(--card-ink);
+    background: #fffdfa;
+    border: 1px solid rgba(90, 8, 40, 0.22);
+    border-radius: 2px;
+}
+
+/* 11. FIXED FOOTER NAVIGATION */
+.fab-container {
+    background: rgba(243, 240, 229, 0.97);
+    border-top: 2px solid var(--card-burgundy);
+}
+
+.fab {
+    color: var(--card-burgundy);
+}
+
+.fab:hover,
+.fab:active {
+    color: var(--card-wine);
+}
+
+/* 12. RESPONSIVE ADJUSTMENTS */
+@media (min-width: 701px) {
+    .section-container {
+        padding-right: 38px;
+        padding-left: 38px;
+    }
+}
+
+@media (max-width: 700px) {
+    :root {
+        --invitation-width: 100%;
+    }
+
+    #mainBackground {
+        width: 100%;
+    }
+
+    .qr-modal-content {
+        clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);
+    }
+}
+
+@media (max-width: 390px) {
+    .hero,
+    .section-container {
+        padding-right: 11px;
+        padding-left: 11px;
+    }
+
+    .hero-text {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .glass-card,
+    .guestbook-card {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    #programme-section,
+    #wishes-section {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        padding-top: 42px;
+        padding-bottom: 42px;
+    }
+}
+
+/* ================================================================
+   13. LAYERED WEDDING-STATIONERY CARD THEME
+   This final theme layer creates the framed cards, envelope panels,
+   floral corner flourishes, wax-seal accents, and paper depth.
+   ================================================================ */
+:root {
+    --stationery-shadow: 0 18px 40px rgba(48, 23, 32, 0.17);
+    --stationery-border: rgba(90, 8, 40, 0.55);
+    --stationery-inner-line: rgba(90, 8, 40, 0.22);
+}
+
+/* Shared raised stationery surface */
+.hero-text,
+#location-section .glass-card,
+#programme-section .glass-card,
+#gift-section .glass-card,
+#wishes-section .guestbook-card {
+    width: min(100%, 510px);
+    background-color: var(--card-eggshell);
+    border: 1px solid var(--stationery-border);
+    outline: 3px double var(--stationery-inner-line);
+    outline-offset: -11px;
+    box-shadow: var(--stationery-shadow);
+}
+
+/* Cover: softly scalloped formal name card */
+.hero {
+    padding-top: clamp(42px, 7vh, 72px);
+    padding-bottom: clamp(42px, 7vh, 72px);
+}
+
+.hero-text {
+    padding: clamp(54px, 9vw, 86px) clamp(28px, 8vw, 66px);
+    border-radius: 42px 42px 70px 70px / 32px 32px 52px 52px;
+    background:
+        radial-gradient(circle at 8% 8%, rgba(120, 24, 58, 0.09), transparent 22%),
+        radial-gradient(circle at 92% 92%, rgba(120, 24, 58, 0.08), transparent 22%),
+        var(--card-eggshell);
+}
+
+.hero-text::before,
+.hero-text::after {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    content: '';
+    width: clamp(92px, 24vw, 132px);
+    aspect-ratio: 1;
+    background: url('img/floral-corner.svg') center / contain no-repeat;
+    opacity: 0.92;
+    pointer-events: none;
+}
+
+.hero-text::before {
+    top: -8px;
+    left: -7px;
+}
+
+.hero-text::after {
+    right: -7px;
+    bottom: -8px;
+    transform: rotate(180deg);
+}
+
+.hero-text > * {
+    position: relative;
+    z-index: 1;
+}
+
+.couple-stack {
+    text-shadow: 0 2px 0 rgba(255, 255, 255, 0.8);
+}
+
+.countdown-grid {
+    padding: 18px 12px 12px;
+    background: rgba(90, 8, 40, 0.045);
+    border-top: 1px solid var(--stationery-inner-line);
+    border-bottom: 1px solid var(--stationery-inner-line);
+}
+
+/* Formal invitation: clipped-corner double frame */
+#location-section {
+    padding-top: clamp(44px, 7vw, 68px);
+    padding-bottom: clamp(44px, 7vw, 68px);
+}
+
+#location-section .glass-card {
+    padding: clamp(42px, 8vw, 72px) clamp(26px, 7vw, 58px);
+    clip-path: polygon(
+        18px 0, calc(100% - 18px) 0, 100% 18px,
+        100% calc(100% - 18px), calc(100% - 18px) 100%,
+        18px 100%, 0 calc(100% - 18px), 0 18px
+    );
+    background:
+        linear-gradient(135deg, rgba(90, 8, 40, 0.08) 0 22px, transparent 22px)
+            top left / 58px 58px no-repeat,
+        linear-gradient(315deg, rgba(90, 8, 40, 0.08) 0 22px, transparent 22px)
+            bottom right / 58px 58px no-repeat,
+        var(--card-eggshell);
+}
+
+#location-section .glass-card::before,
+#location-section .glass-card::after {
+    display: block;
+    position: absolute;
+    content: '';
+    width: clamp(96px, 25vw, 138px);
+    aspect-ratio: 1;
+    background: url('img/floral-corner.svg') center / contain no-repeat;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+#location-section .glass-card::before {
+    top: -8px;
+    right: -7px;
+    transform: rotate(90deg);
+}
+
+#location-section .glass-card::after {
+    bottom: -8px;
+    left: -7px;
+    transform: rotate(270deg);
+}
+
+.invitation-event-details {
+    margin-top: 48px;
+    padding-top: 28px;
+    border-top: 1px solid var(--stationery-inner-line) !important;
+}
+
+/* Programme: ivory schedule card laid over the wine paper band */
+#programme-section .glass-card {
+    padding: clamp(38px, 7vw, 58px) clamp(24px, 6vw, 48px);
+    color: var(--card-ink);
+    border-color: rgba(255, 248, 238, 0.86);
+    outline-color: rgba(90, 8, 40, 0.3);
+    background:
+        radial-gradient(circle at 100% 0, rgba(120, 24, 58, 0.11), transparent 24%),
+        var(--card-eggshell);
+}
+
+#programme-section .glass-card h3,
+#programme-section .schedule-time,
+#programme-section .schedule-desc {
+    color: var(--card-burgundy) !important;
+}
+
+#programme-section .schedule-item {
+    margin: 0;
+    padding: 16px 4px;
+    border-bottom: 1px solid var(--stationery-inner-line);
+}
+
+#programme-section .programme-rsvp-btn {
+    color: #fffaf4;
+    background: linear-gradient(180deg, var(--card-wine), var(--card-burgundy));
+    border-color: var(--card-burgundy-dark);
+}
+
+/* Digital gift: an envelope-inspired stationery card */
+#gift-section {
+    padding-top: clamp(46px, 7vw, 68px);
+    padding-bottom: clamp(46px, 7vw, 68px);
+}
+
+#gift-section .glass-card {
+    padding: clamp(112px, 16vw, 126px) clamp(26px, 7vw, 56px) clamp(40px, 7vw, 58px);
+    overflow: hidden;
+    background:
+        linear-gradient(32deg, transparent 49.4%, rgba(90, 8, 40, 0.13) 50%, transparent 50.6%)
+            left bottom / 50% 52% no-repeat,
+        linear-gradient(-32deg, transparent 49.4%, rgba(90, 8, 40, 0.13) 50%, transparent 50.6%)
+            right bottom / 50% 52% no-repeat,
+        var(--card-eggshell);
+}
+
+#gift-section .glass-card::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: clamp(66px, 10vw, 82px);
+    background: linear-gradient(145deg, var(--card-wine), var(--card-burgundy-dark));
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    opacity: 1;
+}
+
+#gift-section .glass-card::after {
+    content: 'GIFT';
+    display: grid;
+    position: absolute;
+    top: clamp(42px, 6.5vw, 54px);
+    left: 50%;
+    width: 58px;
+    height: 58px;
+    place-items: center;
+    color: #f7e8d4;
+    background: radial-gradient(circle at 38% 32%, #8a244b, var(--card-burgundy) 62%, var(--card-burgundy-dark));
+    border: 1px solid rgba(255, 234, 213, 0.48);
+    border-radius: 50%;
+    box-shadow: 0 5px 14px rgba(53, 6, 25, 0.34);
+    transform: translateX(-50%);
+    font-family: 'Prata', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+}
+
+#gift-section .glass-card > h3 {
+    margin-top: 0;
+}
+
+#gift-info,
+#gift-info strong {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+#gift-info .btn-small {
+    max-width: 100%;
+    white-space: normal;
+}
+
+/* Guest wishes: a pale correspondence card on dusty rose paper */
+#wishes-section .guestbook-card {
+    padding: clamp(42px, 8vw, 66px) clamp(22px, 6vw, 48px);
+    background:
+        linear-gradient(var(--stationery-inner-line), var(--stationery-inner-line))
+            24px 24px / calc(100% - 48px) 1px no-repeat,
+        linear-gradient(var(--stationery-inner-line), var(--stationery-inner-line))
+            24px calc(100% - 24px) / calc(100% - 48px) 1px no-repeat,
+        var(--card-eggshell);
+}
+
+#wishes-section .guestbook-card::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -8px;
+    left: -7px;
+    width: clamp(92px, 24vw, 126px);
+    aspect-ratio: 1;
+    background: url('img/floral-corner.svg') center / contain no-repeat;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.guestbook-scroll-viewport {
+    background: transparent;
+}
+
+/* Desktop cards stay elegant and narrow; phones keep safe gutters. */
+@media (min-width: 701px) {
+    .hero-text,
+    #location-section .glass-card,
+    #programme-section .glass-card,
+    #gift-section .glass-card,
+    #wishes-section .guestbook-card {
+        width: min(100%, 520px);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 900px) {
+    #gift-section .glass-card {
+        width: min(100%, 520px);
+        padding-top: 120px;
+        padding-right: clamp(34px, 7vw, 52px);
+        padding-left: clamp(34px, 7vw, 52px);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text,
+    #location-section .glass-card,
+    #programme-section .glass-card,
+    #gift-section .glass-card,
+    #wishes-section .guestbook-card {
+        width: calc(100% - 12px);
+        outline-offset: -8px;
+    }
+
+    .hero-text {
+        padding: 52px 22px 46px;
+        border-radius: 30px 30px 48px 48px / 24px 24px 36px 36px;
+    }
+
+    .hero-text .couple-stack {
+        font-size: clamp(2rem, 10.5vw, 2.55rem);
+        overflow-wrap: anywhere;
+    }
+
+    .hero-text .countdown-grid {
+        width: 100%;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .hero-text .countdown-label {
+        font-size: 0.52rem;
+        letter-spacing: 0.02em;
+    }
+
+    #location-section .glass-card {
+        padding: 44px 22px;
+    }
+
+    #programme-section .glass-card,
+    #wishes-section .guestbook-card {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    #gift-section .glass-card {
+        padding: 106px 22px 42px;
+    }
+
+    #gift-section .glass-card::before {
+        height: 62px;
+    }
+
+    #gift-section .glass-card::after {
+        top: 38px;
+        width: 54px;
+        height: 54px;
+        font-size: 0.52rem;
+    }
+
+    #gift-section .glass-card > h3 {
+        font-size: clamp(1.65rem, 8vw, 2rem);
+    }
+
+    #gift-section .btn-nav,
+    #gift-section .btn-small {
+        width: min(100%, 260px);
+        min-height: 42px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+/* Natural-proportion floral corners for the first two cards.
+   Each corner is an independent cutout, so tall cards cannot stretch it. */
+.hero-text::before {
+    inset: auto auto auto auto;
+    top: -7px;
+    left: -7px;
+    width: clamp(92px, 24vw, 132px);
+    height: auto;
+    aspect-ratio: 348 / 479;
+    background: url('img/floral-cover-top-left.png') center / contain no-repeat;
+    opacity: 0.58;
+    filter: saturate(0.55) brightness(1.16) contrast(0.82);
+}
+
+.hero-text::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: -7px;
+    bottom: -7px;
+    z-index: 0;
+    width: clamp(108px, 28vw, 150px);
+    height: auto;
+    aspect-ratio: 520 / 533;
+    background: url('img/floral-cover-bottom-right.png') center / contain no-repeat;
+    opacity: 0.58;
+    filter: saturate(0.55) brightness(1.16) contrast(0.82);
+    transform: none;
+    pointer-events: none;
+}
+
+#location-section .glass-card::before {
+    inset: auto auto auto auto;
+    top: -7px;
+    left: -7px;
+    width: clamp(92px, 24vw, 128px);
+    height: auto;
+    aspect-ratio: 312 / 403;
+    background: url('img/floral-invitation-top-left.png') center / contain no-repeat;
+    opacity: 0.56;
+    filter: saturate(0.52) brightness(1.18) contrast(0.8);
+}
+
+#location-section .glass-card::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: -7px;
+    bottom: -7px;
+    z-index: 0;
+    width: clamp(108px, 28vw, 148px);
+    height: auto;
+    aspect-ratio: 383 / 386;
+    background: url('img/floral-invitation-bottom-right.png') center / contain no-repeat;
+    opacity: 0.56;
+    filter: saturate(0.52) brightness(1.18) contrast(0.8);
+    transform: none;
+    pointer-events: none;
+}
+
+@media (max-width: 480px) {
+    .hero-text::before,
+    #location-section .glass-card::before {
+        width: 94px;
+    }
+
+    .hero-text::after,
+    #location-section .glass-card::after {
+        width: 112px;
+    }
+}
+
+/* ================================================================
+   14. REALISTIC CASCADING FLORAL FRAME
+   Generated from the supplied floral references and kept away from
+   Wedding Programme and Digital Gift by design.
+   ================================================================ */
+#wishes-section .guestbook-card::before {
+    content: '';
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    pointer-events: none;
+}
+
+#wishes-section .guestbook-card::before {
+    background: url('img/floral-frame.png') center / 100% 100% no-repeat;
+    opacity: 0.84;
+}
+
+.hero-text > *,
+#location-section .glass-card > *,
+#wishes-section .guestbook-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Keep wording inside the open centre of the floral composition. */
+.hero-text {
+    padding-right: clamp(34px, 8vw, 54px);
+    padding-bottom: clamp(70px, 12vw, 88px);
+    padding-left: clamp(34px, 8vw, 54px);
+}
+
+#location-section .glass-card {
+    padding-right: clamp(34px, 8vw, 54px);
+    padding-bottom: clamp(76px, 13vw, 94px);
+    padding-left: clamp(34px, 8vw, 54px);
+}
+
+#wishes-section .guestbook-card {
+    padding-right: clamp(44px, 10vw, 66px);
+    padding-bottom: clamp(92px, 17vw, 118px);
+    padding-left: clamp(44px, 10vw, 66px);
+}
+
+@media (max-width: 480px) {
+    .hero-text::before,
+    #location-section .glass-card::before,
+    #wishes-section .guestbook-card::before {
+        opacity: 0.8;
+    }
+
+    .hero-text::before,
+    .hero-text::after {
+        opacity: 0.58;
+    }
+
+    #location-section .glass-card::before,
+    #location-section .glass-card::after {
+        opacity: 0.56;
+    }
+
+    .hero-text {
+        padding-right: 30px;
+        padding-bottom: 66px;
+        padding-left: 30px;
+    }
+
+    #location-section .glass-card {
+        padding-right: 30px;
+        padding-bottom: 72px;
+        padding-left: 30px;
+    }
+
+    #wishes-section .guestbook-card {
+        padding-right: 34px;
+        padding-bottom: 86px;
+        padding-left: 34px;
+    }
+}
+
+/* Final override: no flowers on the cover or formal invitation. */
+.hero-text::before,
+.hero-text::after,
+#location-section .glass-card::before,
+#location-section .glass-card::after {
+    display: none !important;
+}
+
+.hero-text {
+    padding: clamp(54px, 9vw, 86px) clamp(28px, 8vw, 66px);
+}
+
+#location-section .glass-card {
+    padding: clamp(42px, 8vw, 72px) clamp(26px, 7vw, 58px);
+}
+
+@media (max-width: 480px) {
+    .hero-text {
+        padding: 52px 22px 46px;
+    }
+
+    #location-section .glass-card {
+        padding: 44px 22px;
+    }
+}
+
+/* 16. UNIVERSAL COVER VIEWPORT FIT
+   JavaScript sets the exact available height and scale so the whole
+   cover, including its countdown, remains visible on every screen. */
+.hero {
+    min-height: 0;
+    padding-top: clamp(8px, 2vh, 18px);
+    padding-bottom: clamp(24px, 4vh, 36px);
+    overflow: hidden;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    zoom: 1;
+    transform: translate(-50%, -50%) scale(var(--cover-fit-scale, 1)) !important;
+    transform-origin: center center;
+    will-change: transform;
+}
+
+.hero::after {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    margin: 0;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 480px) {
+    .hero-text {
+        top: calc(50% - 12px);
+    }
+
+    .hero::after {
+        bottom: 7px;
+    }
+}
+
+/* Desktop cover proportions:
+   keep full names on their own lines so the card stays wide instead
+   of becoming tall and being scaled much smaller than section two. */
+@media (min-width: 701px) {
+    .hero-text {
+        width: min(calc(100% - 24px), 560px);
+        max-width: 560px;
+        padding: 38px 42px;
+    }
+
+    .hero-text .bismillah-img {
+        max-width: 120px;
+        margin-bottom: 12px;
+    }
+
+    .hero-text .cover-kicker {
+        margin-bottom: 10px;
+    }
+
+    .hero-text .couple-stack {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        font-size: clamp(3rem, 5vw, 4rem);
+        line-height: 0.98;
+    }
+
+    .hero-text .couple-stack > span:not(.couple-stack-amp) {
+        white-space: nowrap;
+    }
+
+    .hero-text .cover-divider {
+        margin-top: 14px;
+        margin-bottom: 12px;
+    }
+
+    .hero-text .cover-venue {
+        margin-bottom: 14px;
+    }
+
+    .hero-text .countdown-grid {
+        margin-top: 14px;
+        padding-top: 12px;
+        padding-bottom: 10px;
+    }
+}
+/* Card wording, guest wishes, bottom navigation, and footer. */
+#main-content > .hero,
+#main-content > .hero *,
+#main-content > #location-section,
+#main-content > #location-section *,
+#main-content > #programme-section,
+#main-content > #programme-section *,
+#main-content > #wishes-section,
+#main-content > #wishes-section *,
+#main-content > .fab-container,
+#main-content > .fab-container *,
+#main-content > .footer,
+#main-content > .footer * {
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+/* Preserve the original script font for the guest wishes heading. */
+#main-content > #wishes-section .guestbook-card > h3 {
+    font-family: 'Sacramento', cursive !important;
+}
+
+/* All popup headings, text, buttons, and form fields. */
+#main-content .qr-modal,
+#main-content .qr-modal * {
+    font-family: "Times New Roman", Times, serif !important;
+}

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="The Wedding of Adi Putra Suyanto &amp; Mulia Yasmina Harman">
+    <title>The Wedding of Adi Putra Suyanto &amp; Mulia Yasmina Harman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="moody-layout.css">
+    <link rel="stylesheet" href="reference-style.css">
+    <link rel="stylesheet" href="javanese-theme.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='40'>💍</text></svg>">
+    <!-- RSVP and guest wishes use Firebase Realtime Database. -->
+
+    <!-- Open Graph Meta Tags for WhatsApp Preview -->
+    <meta property="og:title" content="The Wedding of Adi Putra Suyanto &amp; Mulia Yasmina Harman">
+    <meta property="og:description" content="With joyful hearts, we invite you to celebrate our wedding with us.">
+    <meta property="og:image" content="img/moody-botanical-bg.png">
+    <meta property="og:url" content="https://moodichu.github.io/Wedding-Invitation-Adi-Mulia/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+</head>
+<body class="modal-open"> <canvas id="canvas"></canvas>
+    <!-- ===== GLOBAL BACKGROUND, ACCESSIBILITY, MUSIC, AND DISPLAY CONTROLS ===== -->
+    <div id="mainBackground"></div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <button id="musicToggle" class="btn-small" aria-label="Toggle music" style="position:fixed; top:20px; right:20px; z-index:13000; display:none;">🔈</button>
+    <button id="darkModeToggle" class="btn-small" aria-label="Toggle dark mode" style="position:fixed; top:20px; right:75px; z-index:13000;">🌙</button>
+    <div id="confetti-container"></div>
+
+    <audio id="myAudio" loop>
+        <source src="music/payung-teduh-akad.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ===== START: SEALED ENVELOPE / INVITATION GATE ===== -->
+    <div id="overlay">
+        <div class="overlay-content sealed-cover">
+            <button class="invitation-seal javanese-opening-seal" type="button" onclick="mulaMajlis()" aria-label="Open Adi Putra Suyanto and Mulia Yasmina Harman's invitation">
+                <span class="seal-ornament" aria-hidden="true">✦</span>
+                <span class="seal-names"><span class="seal-partner-name">Adi Putra</span><br><i>&amp;</i><br><span class="seal-partner-name">Mulia Yasmina</span></span>
+                <span class="seal-action">Tap to open</span>
+            </button>
+        </div>
+    </div>
+    <!-- ===== END: SEALED ENVELOPE / INVITATION GATE ===== -->
+
+    <main id="main-content" style="display: none; opacity: 0;">
+
+
+        <!-- ===== START: FORMAL INVITATION + EVENT DETAILS =====
+             Edit parent names, couple names, venue, date, and time in this continuous section. -->
+        <section id="greeting-section" class="section-container invitation-details-section" data-aos="fade-up">
+            <div class="glass-card">
+                <h3 class="sacramento gold" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</h3>
+                <p style="font-size: 0.95rem; margin: 15px 0; color: #666;">Peace Be Upon You</p>
+                <p style="font-size: 0.9rem; margin: 20px 0; line-height: 1.8; color: #555;">With gratitude to Allah S.W.T., we</p>
+                
+                <div class="invitation-parents">
+                    <p class="couple-name">Hj. Suyanto Osman</p>
+                    <p class="couple-amp">&</p>
+                    <p class="couple-name">Hjh. Pengiran Rasidah Pengiran Mahtar</p>
+                </div>
+                
+                <p style="font-size: 0.9rem; margin: 20px 0; line-height: 1.8; color: #555;">with His blessing, warmly invite</p>
+                
+                <p style="font-size: 0.95rem; margin: 15px 0; color: #888; font-weight: 500;"><strong>Tan Sri | Puan Sri | Datuk | Dato' | Datin | Mr | Mrs | Ms</strong></p>
+                
+                <p style="font-size: 0.9rem; margin: 20px 0; line-height: 1.8; color: #555;">to celebrate the wedding of</p>
+                
+                <h2 class="sacramento pengantin-name" style="margin: 30px 0 25px; color: var(--gold); letter-spacing: 1px;">Adi Putra</h2>
+
+                <p class="sacramento pengantin-amp">&</p>
+
+                <h2 class="sacramento pengantin-name" style="margin: 25px 0 30px; color: var(--gold); letter-spacing: 1px;">Mulia Yasmina</h2>
+
+            </div>
+        </section>
+        <!-- ===== END: FORMAL GREETING ===== -->
+        <section id="date-section" class="section-container" aria-label="Wedding date">
+            <div class="glass-card"><div class="butiran-grid invitation-event-details">
+                    <div class="date-block">
+                        <div class="event-detail-label">- DATE -</div>
+                        <div class="date-title">23 January 2027 <span class="muted">(Saturday)</span></div>
+                        <div class="time-block">
+                            <div class="event-detail-label">- TIME -</div>
+                            <div class="date-time">7:00 PM — 10:00 PM</div>
+                        </div>
+                    </div>
+
+                <button class="save-date-icon" type="button" onclick="downloadICS()" aria-label="Download the wedding date as an ICS calendar file">
+                    <svg viewBox="0 0 36 40" aria-hidden="true"><rect x="4" y="7" width="28" height="29" rx="3"/><path d="M4 15h28M11 3v8M25 3v8"/><text x="18" y="29" text-anchor="middle">23</text></svg>
+                    <span>Save the Date</span>
+                </button>
+            </div></div>
+        </section>
+        <section id="location-section" class="section-container" aria-label="Wedding venue">
+            <div class="glass-card">
+                    <div class="address-block">
+                        <div class="event-detail-label">- VENUE -</div>
+                        <div class="address-line">Wisma Melayu Kuching</div>
+                        <div class="address-line">Jalan Diplomatik, Off Jalan Bako, Petra Jaya, 93050 Kuching, Sarawak</div>
+                    </div>
+
+                <a class="venue-map-link" href="https://maps.app.goo.gl/6rEAwvSf81CHsqFT7" target="_blank" rel="noopener noreferrer" aria-label="Open Wisma Melayu Kuching in Google Maps">
+                    <svg viewBox="0 0 32 40" aria-hidden="true"><path d="M16 2C8.8 2 3 7.8 3 15c0 9.2 13 23 13 23s13-13.8 13-23C29 7.8 23.2 2 16 2Z"/><circle cx="16" cy="15" r="5"/></svg>
+                    <span>Google Maps</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== START: WEDDING PROGRAMME =====
+             Edit programme times and descriptions inside the list below. -->
+        <section id="programme-section" class="section-container compact-section" data-aos="fade-up">
+            <div class="glass-card">
+                <h3 class="sacramento gold">- Wedding Programme -</h3>
+                <ul class="schedule-list">
+                    <li class="schedule-item"><span class="schedule-time">7:00 PM</span><span class="schedule-desc">Arrival of Guests</span></li>
+                    <li class="schedule-item"><span class="schedule-time">8:00 PM</span><span class="schedule-desc">Arrival of Bride &amp; Groom</span></li>
+                    <li class="schedule-item"><span class="schedule-time">8:30 PM</span><span class="schedule-desc">Dinner</span></li>
+                    <li class="schedule-item"><span class="schedule-time">10:00 PM</span><span class="schedule-desc">End of Ceremony</span></li>
+                </ul>
+            </div>
+        </section>
+        <!-- ===== END: WEDDING PROGRAMME ===== -->
+
+        <section id="countdown-section" class="card-countdown-section" aria-labelledby="countdown-title">
+            <h3 id="countdown-title">- Countdown -</h3>
+                <div id="countdown-timer" class="countdown-grid">
+                    <div class="countdown-item" data-unit="days">
+                        <div class="flip-card">
+                            <div class="flip-value">0</div>
+                        </div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item" data-unit="hours">
+                        <div class="flip-card">
+                            <div class="flip-value">00</div>
+                        </div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item" data-unit="minutes">
+                        <div class="flip-card">
+                            <div class="flip-value">00</div>
+                        </div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item" data-unit="seconds">
+                        <div class="flip-card">
+                            <div class="flip-value">00</div>
+                        </div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+
+        </section>
+
+        <section id="rsvp-section" class="reference-rsvp-section" aria-label="Reply to the invitation">
+            <h3 class="seamless-rsvp-title">- RSVP -</h3>
+            <p class="rsvp-deadline">Please RSVP by 31st December 2026</p>
+            <form id="inline-rsvp-form" class="reference-rsvp-form">
+                <label for="inline-name">Full Name</label>
+                <input id="inline-name" name="nama" placeholder="Enter your full name" autocomplete="name" maxlength="100" required>
+                <fieldset><legend>Will you attend?</legend><div class="attendance-options">
+                    <label><input type="radio" name="kehadiran" value="Attending" required><span>♥ I'll be there</span></label>
+                    <label><input type="radio" name="kehadiran" value="Not Attending"><span>♡ Sorry, I can't make it</span></label>
+                </div></fieldset>
+                <label for="inline-guests">Number of guests</label>
+                <select id="inline-guests" name="jumlah">
+                    <option value="" disabled selected hidden>Select number of guests</option>
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                </select>
+                <label for="inline-wishes">Message</label>
+                <textarea id="inline-wishes" name="ucapan" placeholder="Send your best wishes to the couple 😊" maxlength="1000" rows="4"></textarea>
+                <button class="btn-submit" type="submit">Send confirmation</button>
+                <div class="rsvp-success" role="status" aria-live="polite"></div>
+            </form>
+        <!-- ===== START: ATTENDANCE AND GUEST WISHES =====
+             Guest wishes are loaded live from Firebase. -->
+        <section id="wishes-section" class="section-container compact-section" data-aos="fade-up">
+            <div class="guestbook-card">
+                <h3 class="sacramento gold">Wishes from Our Guests</h3>
+                <!-- Manually scrollable wishes list -->
+                <div style="text-align:left;">
+                    <div id="guestbook-slider-container" class="guestbook-scroll-container">
+                        <div class="guestbook-scroll-viewport" tabindex="0" aria-label="Guest wishes scrolling list">
+                            <div id="guestbook-slider" class="guestbook-scroll-track">
+                                <!-- Guest wishes are injected here by script.js. -->
+                            </div>
+                        </div>
+                    </div>
+                    <div id="guestbook-empty" style="text-align:center; margin-top:24px; color:#888; padding:40px 20px;">
+                        <p style="font-size: 1rem; font-weight: 500;">No wishes yet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===== END: ATTENDANCE AND GUEST WISHES ===== -->
+        </section>
+
+
+
+        <section id="contact-section" class="section-container" aria-labelledby="contact-section-title">
+            <div class="glass-card">
+                <h3 id="contact-section-title">- Contact -</h3>
+                <p class="contact-modal-intro">Tap a contact below for any inquiries</p>
+                <div class="contact-list">
+                    <div class="contact-card" role="button" tabindex="0" data-tel="+60198292807" aria-label="Call Hjh. Pengiran Rasidah">
+                        <div class="contact-info">
+                            <div class="contact-name">Hjh. Pengiran Rasidah</div>
+                            <div class="contact-phone">0198292807</div>
+                        </div>
+                        <div class="contact-actions contact-icon-actions"><a class="contact-icon-button contact-phone-button" href="tel:+60198292807" aria-label="Call Hjh. Pengiran Rasidah" title="Call Hjh. Pengiran Rasidah"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 3.5 10 7.8 7.9 10a15.3 15.3 0 0 0 6.1 6.1l2.2-2.1 4.3 2.8v3.1a1.6 1.6 0 0 1-1.8 1.6C10 20.5 3.5 14 2.5 5.3a1.6 1.6 0 0 1 1.6-1.8Z"/></svg></a><a class="contact-icon-button contact-whatsapp-button" href="https://wa.me/60198292807" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Hjh. Pengiran Rasidah" title="WhatsApp Hjh. Pengiran Rasidah"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 3.8A11.4 11.4 0 0 0 2.3 17.4L1 23l5.7-1.5A11.4 11.4 0 0 0 20.2 3.8Zm-8.1 17.1a9.4 9.4 0 0 1-4.8-1.3l-.4-.2-3.4.9.9-3.3-.2-.4a9.4 9.4 0 1 1 7.9 4.3Zm5.2-7.1c-.3-.1-1.7-.8-2-.9-.2-.1-.4-.1-.6.2-.2.3-.7.9-.9 1.1-.1.2-.3.2-.6.1-1.4-.7-2.5-1.6-3.3-2.9-.2-.3 0-.4.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.5-.4-.6-.4h-.6c-.2 0-.5.1-.7.3-.7.7-1 1.4-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3.1 4.8 4.3 1.8.7 2.6.8 3.5.7.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg></a></div>
+                    </div>
+                    <div class="contact-card" role="button" tabindex="0" data-tel="+60168770655" aria-label="Call Lidiana Suyanto">
+                        <div class="contact-info">
+                            <div class="contact-name">Lidiana Suyanto</div>
+                            <div class="contact-phone">0168770655</div>
+                        </div>
+                        <div class="contact-actions contact-icon-actions"><a class="contact-icon-button contact-phone-button" href="tel:+60168770655" aria-label="Call Lidiana Suyanto" title="Call Lidiana Suyanto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 3.5 10 7.8 7.9 10a15.3 15.3 0 0 0 6.1 6.1l2.2-2.1 4.3 2.8v3.1a1.6 1.6 0 0 1-1.8 1.6C10 20.5 3.5 14 2.5 5.3a1.6 1.6 0 0 1 1.6-1.8Z"/></svg></a><a class="contact-icon-button contact-whatsapp-button" href="https://wa.me/60168770655" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Lidiana Suyanto" title="WhatsApp Lidiana Suyanto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 3.8A11.4 11.4 0 0 0 2.3 17.4L1 23l5.7-1.5A11.4 11.4 0 0 0 20.2 3.8Zm-8.1 17.1a9.4 9.4 0 0 1-4.8-1.3l-.4-.2-3.4.9.9-3.3-.2-.4a9.4 9.4 0 1 1 7.9 4.3Zm5.2-7.1c-.3-.1-1.7-.8-2-.9-.2-.1-.4-.1-.6.2-.2.3-.7.9-.9 1.1-.1.2-.3.2-.6.1-1.4-.7-2.5-1.6-3.3-2.9-.2-.3 0-.4.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.5-.4-.6-.4h-.6c-.2 0-.5.1-.7.3-.7.7-1 1.4-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3.1 4.8 4.3 1.8.7 2.6.8 3.5.7.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg></a></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== START: FOOTER ===== -->
+        <footer class="footer">
+            <p>Thank you for celebrating with us!</p>
+            <div style="margin-top:15px;">
+                <button id="backToTop" class="btn-small" type="button">Back to Top</button>
+            </div>
+        </footer>
+        <!-- ===== END: FOOTER ===== -->
+
+
+
+        <!-- ===== START: RSVP POPUP MODAL =====
+             This form opens from the RSVP button in the fixed bottom navigation.
+             Edit labels and guest-count choices here. Submission behavior is in script.js. -->
+        <div id="rsvpModal" class="qr-modal rsvp-modal" role="dialog" aria-modal="true" aria-label="RSVP form">
+            <div class="qr-modal-content rsvp-modal-content">
+                <button class="qr-modal-close" type="button" onclick="closeRSVPModal()" aria-label="Close RSVP form">&times;</button>
+                <p class="rsvp-modal-intro">Please let us know if you will be celebrating with us.</p>
+                <form id="rsvp-form">
+                    <input type="text" name="nama" placeholder="Full Name" autocomplete="name" required>
+                    <select name="kehadiran" required>
+                        <option value="" disabled selected hidden>Attendance Status</option>
+                        <option value="Attending">Attending</option>
+                        <option value="Not Attending">Not Attending</option>
+                    </select>
+                    <select name="jumlah">
+                        <option value="" disabled selected hidden>Number of Guests</option>
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                    </select>
+                    <textarea name="ucapan" placeholder="Leave your wishes for us..."></textarea>
+                    <button type="submit" id="submitBtn" class="btn-submit">SUBMIT RSVP</button>
+                </form>
+                <div id="success-msg" class="rsvp-success" role="status" aria-live="polite">Thank you for your RSVP! 🎉</div>
+            </div>
+        </div>
+        <!-- ===== END: RSVP POPUP MODAL ===== -->
+
+
+
+        <!-- ===== START: VENUE LOCATION POPUP MODAL =====
+             Opens from the Location button in the fixed bottom navigation.
+             Edit the address and navigation links here if the venue changes. -->
+        <div id="locationModal" class="qr-modal location-modal" role="dialog" aria-modal="true" aria-labelledby="locationModalTitle">
+            <div class="qr-modal-content location-modal-content">
+                <button class="qr-modal-close" type="button" onclick="closeLocationModal()" aria-label="Close venue location">&times;</button>
+                <div class="location-pin" aria-hidden="true">📍</div>
+                <h3 id="locationModalTitle" class="gold">Venue Location</h3>
+                <p class="location-venue-name">Wisma Melayu Kuching</p>
+                <p class="location-address">Jln Diplomatik, Petra Jaya, 93050 Kuching, Sarawak</p>
+                <div class="location-modal-actions">
+                    <a class="btn-nav" href="https://maps.app.goo.gl/6rEAwvSf81CHsqFT7" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>
+                    <a class="btn-nav" href="https://waze.com/ul?ll=1.5845098%2C110.3698838&amp;navigate=yes" target="_blank" rel="noopener noreferrer">🧭 Waze</a>
+                </div>
+            </div>
+        </div>
+        <!-- ===== END: VENUE LOCATION POPUP MODAL ===== -->
+
+
+        <!-- ===== START: SAVE-THE-DATE CALENDAR MODAL ===== -->
+        <div id="calendarModal" class="qr-modal">
+            <div class="qr-modal-content">
+                <button class="qr-modal-close" onclick="closeCalendarModal()">&times;</button>
+                <h3 class="sacramento gold" style="margin-bottom: 24px;">Save the Date</h3>
+                <p style="margin-bottom: 20px; color: #666;">Choose how you would like to save the wedding date:</p>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <button id="googleCalBtn" class="btn-nav" style="margin: 0;" onclick="addToGoogleCalendar()">
+                        <span style="font-size: 1.2rem; margin-right: 8px;">🔵</span> Google Calendar
+                    </button>
+                    <button id="appleCalBtn" class="btn-nav" style="margin: 0;" onclick="addToAppleCalendar()">
+                        <span style="font-size: 1.2rem; margin-right: 8px;">🍎</span> Apple Calendar
+                    </button>
+                    <button class="btn-nav" style="margin: 0;" onclick="downloadICS()">
+                        <span style="font-size: 1.2rem; margin-right: 8px;">⬇️</span> Download (.ics)
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- ===== END: SAVE-THE-DATE CALENDAR MODAL ===== -->
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
+    <script src="firebase-rsvp.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

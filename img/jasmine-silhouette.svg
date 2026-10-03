@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 760">
+ <defs>
+  <g id="flower" fill="#98713c">
+   <ellipse cx="0" cy="-14" rx="7" ry="16"/>
+   <ellipse cx="0" cy="-14" rx="7" ry="16" transform="rotate(45)"/>
+   <ellipse cx="0" cy="-14" rx="7" ry="16" transform="rotate(90)"/>
+   <ellipse cx="0" cy="-14" rx="7" ry="16" transform="rotate(135)"/>
+   <ellipse cx="0" cy="-14" rx="7" ry="16" transform="rotate(180)"/>
+   <ellipse cx="0" cy="-14" rx="7" ry="16" transform="rotate(225)"/>
+   <ellipse cx="0" cy="-14" rx="7" ry="16" transform="rotate(270)"/>
+   <ellipse cx="0" cy="-14" rx="7" ry="16" transform="rotate(315)"/>
+   <circle r="6"/>
+  </g>
+ </defs>
+ <g opacity=".065">
+  <g fill="none" stroke="#98713c" stroke-width="2">
+   <path d="M-12 308C27 250 10 167 51 88M15 225C41 200 56 163 72 141M20 190C-2 173-4 145 0 129"/>
+   <path d="M472 710C432 653 450 571 409 490M445 626C415 604 400 568 383 549M441 590C459 574 466 550 466 529"/>
+  </g>
+  <g fill="#98713c">
+   <path d="M17 220C-16 211-17 184-13 174C11 178 20 199 17 220ZM27 179C57 172 61 147 55 134C34 141 24 160 27 179ZM37 119C17 111 13 92 18 79C37 85 41 101 37 119Z"/>
+   <path d="M440 623C471 614 478 591 472 578C449 584 439 604 440 623ZM432 578C404 571 399 548 403 535C425 539 435 559 432 578ZM420 521C442 513 445 490 439 478C421 486 416 502 420 521Z"/>
+  </g>
+  <use href="#flower" transform="translate(49 90) rotate(15) scale(1.2)"/>
+  <use href="#flower" transform="translate(74 139) rotate(30) scale(.85)"/>
+  <use href="#flower" transform="translate(0 133) rotate(-20) scale(.8)"/>
+  <use href="#flower" transform="translate(409 489) rotate(-15) scale(1.2)"/>
+  <use href="#flower" transform="translate(382 547) rotate(20) scale(.85)"/>
+  <use href="#flower" transform="translate(465 530) rotate(10) scale(.8)"/>
+ </g>
+</svg>

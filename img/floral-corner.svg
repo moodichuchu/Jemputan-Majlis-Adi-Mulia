@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Burgundy floral corner ornament">
+  <defs>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6f3347"/>
+      <stop offset="1" stop-color="#35101d"/>
+    </linearGradient>
+    <radialGradient id="rose" cx="38%" cy="32%" r="70%">
+      <stop offset="0" stop-color="#b45673"/>
+      <stop offset=".55" stop-color="#78183a"/>
+      <stop offset="1" stop-color="#4a071f"/>
+    </radialGradient>
+  </defs>
+
+  <g fill="none" stroke="#6b2940" stroke-linecap="round">
+    <path d="M10 170C48 139 64 104 78 59C88 29 109 15 149 10" stroke-width="3"/>
+    <path d="M43 139C54 125 68 118 87 116" stroke-width="2"/>
+    <path d="M63 101C77 91 91 87 108 89" stroke-width="2"/>
+    <path d="M78 62C92 57 108 58 124 66" stroke-width="2"/>
+  </g>
+
+  <g fill="url(#leaf)">
+    <path d="M28 151C12 146 7 135 11 121C26 122 37 132 28 151Z"/>
+    <path d="M48 127C37 113 42 99 56 92C66 108 63 120 48 127Z"/>
+    <path d="M66 100C54 87 58 73 70 66C83 78 81 92 66 100Z"/>
+    <path d="M83 75C78 58 89 47 104 47C108 63 99 73 83 75Z"/>
+    <path d="M100 42C97 27 109 18 124 20C124 34 115 42 100 42Z"/>
+    <path d="M55 135C69 124 83 126 91 139C78 149 65 147 55 135Z"/>
+    <path d="M79 110C94 101 108 105 114 119C99 127 87 124 79 110Z"/>
+    <path d="M101 82C117 76 129 83 132 98C116 103 105 97 101 82Z"/>
+    <path d="M126 29C140 18 153 21 161 34C148 45 135 42 126 29Z"/>
+  </g>
+
+  <g fill="#d59ba9" stroke="#f0d6d8" stroke-width="1.3">
+    <ellipse cx="48" cy="117" rx="8" ry="15" transform="rotate(-42 48 117)"/>
+    <ellipse cx="48" cy="117" rx="8" ry="15" transform="rotate(42 48 117)"/>
+    <ellipse cx="48" cy="117" rx="8" ry="15" transform="rotate(90 48 117)"/>
+    <circle cx="48" cy="117" r="5" fill="#7a1738" stroke="none"/>
+  </g>
+
+  <g transform="translate(91 69)">
+    <circle r="22" fill="url(#rose)"/>
+    <path d="M-12-2C-11-14 3-18 11-9C19 0 12 13 0 15C-13 15-20 5-12-2Z" fill="#8f294c"/>
+    <path d="M-7 0C-4-9 6-10 11-3C13 6 5 11-3 8C-9 6-11 3-7 0Z" fill="#68102e"/>
+    <path d="M-2-1C1-5 7-3 7 2C5 7-2 7-4 3C-5 1-4 0-2-1Z" fill="#bd6d83"/>
+  </g>
+
+  <g fill="#f1d8d5" stroke="#a55b6e" stroke-width="1.2">
+    <circle cx="113" cy="43" r="6"/>
+    <circle cx="125" cy="33" r="5"/>
+    <circle cx="138" cy="24" r="4"/>
+  </g>
+
+  <g fill="#7a1738">
+    <circle cx="113" cy="43" r="2"/>
+    <circle cx="125" cy="33" r="1.7"/>
+    <circle cx="138" cy="24" r="1.4"/>
+  </g>
+
+  <!-- Smaller wine rose -->
+  <g transform="translate(30 143) scale(.72)">
+    <circle r="21" fill="url(#rose)"/>
+    <path d="M-12-1C-11-13 2-18 11-9C18 0 12 12 1 15C-12 15-19 6-12-1Z" fill="#912b4e"/>
+    <path d="M-7 0C-4-8 6-10 11-3C13 6 5 11-3 8C-9 6-10 3-7 0Z" fill="#64102c"/>
+    <path d="M-1-1C3-5 8-2 7 3C4 7-2 7-4 3C-5 1-3 0-1-1Z" fill="#c1768a"/>
+  </g>
+
+  <!-- Airy blush blossom -->
+  <g transform="translate(115 101)">
+    <ellipse rx="7" ry="14" transform="rotate(0)" fill="#dca6b2"/>
+    <ellipse rx="7" ry="14" transform="rotate(72)" fill="#e4b8bf"/>
+    <ellipse rx="7" ry="14" transform="rotate(144)" fill="#d395a6"/>
+    <ellipse rx="7" ry="14" transform="rotate(216)" fill="#e3b0ba"/>
+    <ellipse rx="7" ry="14" transform="rotate(288)" fill="#d89bad"/>
+    <circle r="5" fill="#f0d3c1"/>
+    <circle r="2.4" fill="#7a1738"/>
+  </g>
+
+  <!-- Ivory garden flower -->
+  <g transform="translate(76 132) scale(.82)">
+    <ellipse rx="8" ry="15" transform="rotate(0)" fill="#f3dfd6" stroke="#c58697"/>
+    <ellipse rx="8" ry="15" transform="rotate(72)" fill="#f8e9df" stroke="#c58697"/>
+    <ellipse rx="8" ry="15" transform="rotate(144)" fill="#efd6d2" stroke="#c58697"/>
+    <ellipse rx="8" ry="15" transform="rotate(216)" fill="#f8e6dc" stroke="#c58697"/>
+    <ellipse rx="8" ry="15" transform="rotate(288)" fill="#f0d9d4" stroke="#c58697"/>
+    <circle r="5.5" fill="#a94361"/>
+    <circle r="2" fill="#f4d5a7"/>
+  </g>
+
+  <!-- Three small open blossoms -->
+  <g fill="#f4dfd9" stroke="#a64d68" stroke-width="1">
+    <g transform="translate(137 67)">
+      <circle cy="-5" r="5"/><circle cx="4.8" cy="-1.5" r="5"/>
+      <circle cx="3" cy="4" r="5"/><circle cx="-3" cy="4" r="5"/>
+      <circle cx="-4.8" cy="-1.5" r="5"/><circle r="2.5" fill="#711432"/>
+    </g>
+    <g transform="translate(96 119) scale(.72)">
+      <circle cy="-5" r="5"/><circle cx="4.8" cy="-1.5" r="5"/>
+      <circle cx="3" cy="4" r="5"/><circle cx="-3" cy="4" r="5"/>
+      <circle cx="-4.8" cy="-1.5" r="5"/><circle r="2.5" fill="#711432"/>
+    </g>
+    <g transform="translate(149 47) scale(.58)">
+      <circle cy="-5" r="5"/><circle cx="4.8" cy="-1.5" r="5"/>
+      <circle cx="3" cy="4" r="5"/><circle cx="-3" cy="4" r="5"/>
+      <circle cx="-4.8" cy="-1.5" r="5"/><circle r="2.5" fill="#711432"/>
+    </g>
+  </g>
+
+  <!-- Fine baby's-breath buds keep the bouquet light -->
+  <g fill="#fbefe5" stroke="#9a4862" stroke-width="1">
+    <circle cx="17" cy="116" r="3.5"/>
+    <circle cx="25" cy="105" r="3"/>
+    <circle cx="37" cy="93" r="3.5"/>
+    <circle cx="151" cy="19" r="3"/>
+    <circle cx="162" cy="13" r="3.5"/>
+    <circle cx="157" cy="31" r="2.8"/>
+  </g>
+</svg>

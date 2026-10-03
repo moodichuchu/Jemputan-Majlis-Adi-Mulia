@@ -1,0 +1,328 @@
+/* Reference recreation: wine envelopes, embossed ivory paper, and floral frames. */
+:root { --invitation-width: 460px; --paper: #faf9f6; --wine: #510c28; }
+html { background: #151713; }
+body { background: var(--paper); font-family: 'Times New Roman', Times, serif; }
+#main-content button, #main-content input, #main-content textarea, #main-content select, #main-content .qr-modal *, #main-content .fab-container * { font-family: 'Times New Roman', Times, serif !important; }
+#mainBackground { position: fixed; inset: 0; width: 100vw; max-width: none; transform: none; background: url('img/reference-floral-background.png') center / cover no-repeat; filter: brightness(.8); }
+#main-content { background: var(--paper); padding-bottom: 88px; }
+#canvas { display: none; }
+.hero { padding: 28px 12px 20px; height: auto !important; min-height: 0 !important; overflow: visible; background: var(--paper); }
+.hero::before, .hero::after, .section-container::before, .section-container::after { display: none !important; }
+.hero-text { position: relative; top: auto; left: auto; width: 100%; max-width: 410px; min-height: 0 !important; height: auto; display: block; padding: 0; margin: 0 auto; transform: none !important; background: transparent !important; border: 0 !important; border-radius: 0; outline: 0 !important; box-shadow: none !important; }
+.hero .hero-text::before, .hero .hero-text::after { display: none !important; }
+.stationery-art { display: block; width: 100%; height: 650px; object-fit: fill; }
+.cover-copy { position: absolute; top: 330px; left: 17%; right: 17%; height: 270px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.hero-text .bismillah-img { width: 88px; max-width: 88px; margin: 0 0 10px; }
+.hero-text .cover-kicker { font-size: 9px; letter-spacing: 1px; line-height: 1.5; margin: 0 0 12px; }
+.hero-text .cover-kicker, .hero-text .cover-date, .hero-text .cover-venue { color: #625c50 !important; font-family: 'Times New Roman', Times, serif !important; }
+#main-content > .hero .couple-stack { font-family: 'Eilee Smith', 'Sacramento', cursive !important; font-size: 38px; line-height: 1.1; margin: 0; letter-spacing: 0; color: #302f29 !important; }
+#main-content > .hero .couple-stack > span { font-family: inherit !important; white-space: normal; }
+.hero-text .couple-stack .couple-stack-amp { font-size: 20px; padding: 4px 0; color: #5f584c !important; }
+.cover-divider { display: none; }
+.hero-text .cover-date { font-size: 10px; line-height: 1.5; letter-spacing: .4px; margin: 15px 0 4px; }
+.hero-text .cover-venue { font-size: 10px; line-height: 1.5; letter-spacing: .4px; margin: 0; }
+.countdown-grid { display: flex; flex-wrap: nowrap; justify-content: center; gap: 7px; width: 100%; padding: 24px 5px 0; margin: 0; background: none; border: 0; box-shadow: none; }
+.countdown-item { min-width: 48px; width: 48px; flex: 0 0 48px; gap: 0; }
+.flip-card { height: 36px; padding: 0; min-width: 0; background: none; border: 0; border-radius: 0; box-shadow: none; perspective: none; }
+.flip-card::before { display: none; }
+.flip-value { font-family: 'Times New Roman', serif; color: #444035; background: none; -webkit-text-fill-color: currentColor; font-size: 27px; line-height: 36px; font-weight: 400; }
+.countdown-label { font-size: 9px; margin: 3px 0 0; font-weight: 400; text-transform: uppercase; color: #615f59; }
+.countdown-separator { font-size: 22px; margin: 2px 0 0; align-self: flex-start; }
+.countdown-item:last-child .flip-value, .countdown-item:last-child .countdown-label { color: #b97888; }
+.section-container { padding: 35px 25px; margin: 0; background: var(--paper); clip-path: none; }
+.section-container .glass-card { position: relative; width: 100%; padding: 44px 23px; background: #f1eee5; border: 4px solid var(--wine); border-radius: 0; outline: 1px solid #a49a85; outline-offset: -14px; box-shadow: inset 0 0 0 7px var(--paper), inset 0 0 0 9px #d4d0be, 0 4px 8px #0000000c; overflow: visible; }
+.section-container .glass-card::before { content: ''; position: absolute; inset: 19px; border: 1px solid #c6c3b4; border-radius: 20px 0 20px 0; pointer-events: none; background: none; width: auto; height: auto; transform: none; }
+.section-container .glass-card::after { content: ''; display: block; position: absolute; top: -32px; left: -28px; width: 105px; height: 150px; background: url('img/floral-invitation-top-left.png') center / contain no-repeat; pointer-events: none; transform: none; opacity: 1; }
+.section-container .glass-card > * { position: relative; z-index: 1; }
+.section-container .glass-card { color: #514b40; }
+.reference-rsvp-form, .footer, .guestbook-card, #greeting-section .glass-card, #programme-section .glass-card { font-family: 'Times New Roman', Times, serif; }
+.cover-copy .cover-venue { max-width: 190px; }
+#main-content .hero .couple-stack { font-size: 32px; }
+.hero-text .couple-stack > span:not(.couple-stack-amp) { white-space: nowrap !important; }
+.cover-copy { top: 340px; height: 235px; }
+.hero .scroll-cue { display: none; }
+.hero-text .cover-kicker { max-width: 150px; }
+.address-block, .date-block { background: transparent; border: 0; border-radius: 0; box-shadow: none; padding: 0; }
+#greeting-section .pengantin-name { color: #514b40 !important; font-family: 'Times New Roman', serif !important; font-size: 19px; letter-spacing: .3px !important; }
+#greeting-section .invitation-parents .couple-name, #greeting-section .couple-amp, #greeting-section .pengantin-amp { font-family: 'Times New Roman', serif !important; }
+.cover-copy .bismillah-img { margin-bottom: 7px; }
+.hero-text .cover-date { margin-top: 10px; }
+.section-container .glass-card { margin: 0; }
+#programme-section .glass-card { padding: 44px 23px; }
+#programme-section .glass-card::after { top: auto; left: auto; right: -30px; bottom: -55px; width: 100px; height: 160px; background-image: url('img/floral-invitation-bottom-right.png'); }
+.glass-card .schedule-item { justify-content: center; text-align: center; }
+.glass-card .schedule-item .schedule-desc { color: #655f54; }
+.footer p { color: #7b7365; font-size: 11px; }
+#musicToggle { background: var(--wine); color: white; border: 0; }
+.invitation-details-section, #programme-section { background: var(--paper); }
+#greeting-section .glass-card > h3, #programme-section .glass-card > h3 { font-family: 'Eilee Smith', 'Sacramento', cursive !important; color: #514b40 !important; font-size: 34px; line-height: 1.2; margin: 0 0 18px; }
+#greeting-section .glass-card > p { font-size: 13px !important; line-height: 1.7 !important; margin: 12px 0 !important; color: #666052 !important; }
+.invitation-parents { margin: 18px 0; }
+.invitation-parents .couple-name { font-size: 14px; line-height: 1.5; color: #504737; }
+#greeting-section .invitation-parents .couple-amp { font-size: 19px; margin: 6px 0; }
+#greeting-section .pengantin-name { font-size: 22px; line-height: 1.3; margin: 20px 0 10px !important; }
+#greeting-section .pengantin-amp { font-size: 19px; margin: 8px 0; }
+.invitation-event-details { display: flex; flex-direction: column; gap: 22px; margin: 26px 0 0; padding: 22px 0 0; border-top: 1px solid #c6c3b4; }
+.address-block, .date-block { text-align: center; }
+.event-detail-label { font-size: 9px; letter-spacing: 2px; margin-bottom: 6px; color: #716453; }
+.address-line, .date-title, .date-time { font-size: 14px; line-height: 1.6; }
+.time-block { margin-top: 18px; }
+.actions, .save-date-row { width: 100%; justify-content: center; }
+.btn-nav, .btn-submit { background: var(--wine); color: #fffaf0; border: 0; border-radius: 28px; padding: 12px 24px; font-size: 13px; box-shadow: none; }
+.btn-nav:hover, .btn-submit:hover { background: #762340; }
+.schedule-list { padding: 0; margin: 25px 0; }
+.schedule-item { display: flex; flex-direction: column; gap: 5px; padding: 15px 0; border-bottom: 1px solid #d6d0c0; background: none; }
+.schedule-time { font-size: 18px; color: #5b273b; }
+.schedule-desc { font-size: 14px; color: #655f54; }
+.programme-rsvp-btn { margin-top: 12px; }
+.reference-rsvp-section { padding: 28px 32px 40px; text-align: center; }
+.rsvp-envelope { position: relative; width: 260px; height: 300px; margin: 0 auto 26px; }
+.rsvp-envelope::before { content: ''; position: absolute; inset: 65px 8px 25px; background: #64132f; clip-path: polygon(0 32%, 50% 0, 100% 32%, 100% 100%, 0 100%); }
+.rsvp-letter { position: absolute; top: 36px; left: 44px; width: 170px; height: 207px; padding: 20px; background: #f4f0e7; outline: 1px solid #bbb09a; outline-offset: -9px; border: 1px solid #dfd6c3; box-shadow: 0 2px 9px #0002; }
+.rsvp-letter span { display: block; font-family: 'Eilee Smith', cursive; font-size: 24px; color: #544b3d; }
+.rsvp-letter strong { display: block; font-family: 'Times New Roman', serif; font-size: 53px; line-height: .9; font-weight: 400; margin-top: 12px; color: #23231e; }
+.envelope-front { position: absolute; inset: 133px 8px 25px; background: linear-gradient(135deg, #6e1935, #47061e); clip-path: polygon(0 0, 50% 47%, 100% 0, 100% 100%, 0 100%); filter: drop-shadow(0 3px 4px #0002); }
+.rsvp-envelope img { position: absolute; width: 105px; height: 190px; object-fit: contain; right: -20px; bottom: -5px; }
+.reference-rsvp-section > p { font-family: 'Times New Roman', serif; font-size: 14px; line-height: 1.6; color: #696356; margin: 0 auto 18px; max-width: 280px; }
+.reference-rsvp-form { text-align: left; max-width: 330px; margin: 0 auto; }
+.reference-rsvp-form > label, .reference-rsvp-form legend { display: block; font-size: 12px; margin: 18px 0 7px; color: #302f29; }
+.reference-rsvp-form input:not([type='radio']), .reference-rsvp-form textarea { display: block; width: 100%; background: #fff; border: 1px solid #deddd7; border-radius: 3px; padding: 10px; font-size: 13px; margin: 0; }
+.reference-rsvp-form fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.reference-rsvp-form fieldset { margin-top: 18px; }
+.reference-rsvp-form fieldset > legend { margin: 0 0 7px; padding: 0; }
+.attendance-options, .guest-options { display: flex; gap: 8px; }
+.attendance-options label, .guest-options label { position: relative; cursor: pointer; }
+.attendance-options label { flex: 1; }
+.attendance-options input, .guest-options input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.attendance-options span, .guest-options span { display: block; padding: 10px 7px; text-align: center; background: #fff; border: 1px solid #deddd7; border-radius: 4px; font-size: 11px; }
+.guest-options span { width: 38px; font-size: 13px; }
+.attendance-options input:checked + span, .guest-options input:checked + span { background: var(--wine); color: white; border-color: var(--wine); }
+.attendance-options input:focus-visible + span, .guest-options input:focus-visible + span { outline: 2px solid #aa7182; outline-offset: 3px; }
+.reference-rsvp-form .btn-submit { width: 100%; margin-top: 20px; border-radius: 4px; }
+.reference-rsvp-form .rsvp-success { display: none; margin-top: 16px; color: #42613a; font-size: 13px; line-height: 1.5; }
+#wishes-section { padding-top: 25px; }
+.guestbook-card { background: transparent; border: 0; border-radius: 0; box-shadow: none; padding: 18px 0; }
+.guestbook-card::before, .guestbook-card::after { display: none; }
+#main-content > #wishes-section .guestbook-card > h3 { font-family: 'Sacramento', cursive !important; font-size: 32px; }
+.guestbook-scroll-container, .guestbook-scroll-viewport { background: #f3f0e8; border-radius: 0; box-shadow: none; }
+.guestbook-scroll-entry { border-color: #d9d0bf; }
+.footer { background: var(--paper); color: #7b7365; padding: 22px 30px; border: 0; font-size: 11px; line-height: 1.7; }
+.fab-container { width: min(100%, 460px); background: #faf9f6f5; backdrop-filter: blur(12px); border-top: 1px solid #ded6c9; box-shadow: 0 -3px 18px #0000000a; }
+.fab { color: var(--wine); background: transparent; border: 0; }
+.fab-label { font-size: 11px; letter-spacing: .5px; }
+.qr-modal-content { background: var(--paper); border: 1px solid #b8a690; border-radius: 3px; box-shadow: 0 18px 60px #0005; }
+.qr-modal input, .qr-modal select, .qr-modal textarea { background: #fff; border: 1px solid #d8d1c5; border-radius: 3px; color: #3c3029; }
+.contact-card { background: #f1eee5; border: 1px solid #ded4c2; border-radius: 3px; }
+#overlay { background: #191411d9; }
+.invitation-seal { width: 200px; height: 200px; }
+/* The envelope cover is now the invitation's opening screen. */
+#overlay { background: transparent; overflow-y: auto; overflow-x: hidden; display: block; }
+#overlay .overlay-content { width: 100%; max-width: none; padding: 0; margin: 0; transform: none; }
+#overlay .hero { padding: 12px 12px 24px; }
+.cover-open-art { position: relative; display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: pointer; color: inherit; }
+.cover-open-art:focus-visible { outline: 2px solid var(--wine); outline-offset: 4px; }
+#overlay .stationery-art { height: min(650px, 76svh); }
+#overlay .cover-copy { top: 51%; height: 37%; }
+#overlay .couple-stack, #overlay .couple-stack > span { font-family: 'Eilee Smith', 'Sacramento', cursive !important; font-size: clamp(25px, 7vw, 32px); color: #302f29 !important; }
+#overlay .couple-stack-amp { font-size: 18px !important; }
+#overlay .cover-kicker { font-size: 8px; margin-bottom: 7px; }
+#overlay .cover-copy .bismillah-img { max-width: 65px; margin-bottom: 5px; }
+#overlay .cover-date, #overlay .cover-venue { font-size: 9px; }
+#overlay .cover-date { margin-top: 8px; }
+.cover-open-hint { display: block; margin: 15px 0 0; font-family: 'Times New Roman', serif; font-size: 10px; letter-spacing: 2px; color: var(--wine); text-align: center; }
+#overlay .countdown-grid { padding-top: 14px; }
+@media (max-width: 380px) {
+    .stationery-art { height: 590px; }
+    .cover-copy { top: 300px; height: 235px; }
+    .hero-text .couple-stack { font-size: 32px !important; }
+    .hero-text .cover-kicker { font-size: 8px; }
+    .hero-text .cover-date, .hero-text .cover-venue { font-size: 9px; }
+    .section-container { padding-right: 20px; padding-left: 20px; }
+}
+
+/* Closed envelope with only the partners' names on its front. */
+body.modal-open { background: transparent; box-shadow: none; }
+#overlay .sealed-cover { min-height: 100svh; display: flex; align-items: center; justify-content: center; padding: 35px 24px; background: transparent; border: 0; box-shadow: none; }
+.sealed-envelope { position: relative; display: block; width: 100%; max-width: 370px; aspect-ratio: 1.25; padding: 0; border: 1px solid #802945; border-radius: 3px; overflow: hidden; cursor: pointer; background: linear-gradient(135deg, #78223e, #46091e); box-shadow: 0 20px 35px #3e071c30, inset 0 0 0 1px #ffffff0b; }
+.sealed-envelope::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .16; background: repeating-linear-gradient(85deg, transparent 0 2px, #ffffff16 2px 3px); }
+.sealed-envelope:focus-visible { outline: 3px solid #ad884b; outline-offset: 6px; }
+.sealed-envelope-folds { position: absolute; inset: 0; background: linear-gradient(33deg, transparent 49.5%, #29041450 50%, transparent 50.5%) left / 50% 100% no-repeat, linear-gradient(-33deg, transparent 49.5%, #29041450 50%, transparent 50.5%) right / 50% 100% no-repeat; }
+.sealed-envelope-flap { position: absolute; top: 0; left: 0; width: 100%; height: 61%; background: linear-gradient(160deg, #812a47, #5c102c); clip-path: polygon(0 0, 100% 0, 50% 100%); filter: drop-shadow(0 3px 2px #22021099); }
+.envelope-wax-seal { position: absolute; left: 50%; top: 51%; width: 48px; height: 48px; transform: translate(-50%, -50%); border: 3px solid #c9a56a; border-radius: 47% 52% 45% 51%; background: radial-gradient(circle at 30% 24%, #e6c68b, #bc9050 50%, #88642d); box-shadow: 0 3px 5px #20010f77, inset 0 0 0 3px #e6c68b66, inset 0 0 0 5px #7b581c44; }
+.envelope-wax-seal::after { content: '✦'; position: absolute; inset: 0; display: grid; place-items: center; font-size: 23px; color: #8e672f; text-shadow: 0 1px #f3dbaa; }
+.sealed-partners { position: absolute; top: 64%; left: 8%; right: 8%; display: flex; flex-direction: column; align-items: center; color: #f4eada; font-family: 'Eilee Smith', 'Sacramento', cursive; font-size: clamp(25px, 7vw, 34px); line-height: 1.1; text-shadow: 0 1px 2px #30000f44; }
+.sealed-partners-amp { font-family: 'Times New Roman', serif; font-size: 15px; margin: 1px 0; }
+.card-countdown-section { padding: 25px 20px 40px; text-align: center; background: var(--paper); }
+.card-countdown-section h3 { font-family: 'Times New Roman', serif !important; font-size: 18px; color: #655649; font-weight: 400; margin: 0 0 10px; }
+.card-countdown-section .countdown-grid { padding-top: 12px; }
+
+/* Sequential card flow without a fixed navigator. */
+#main-content { padding-bottom: 0; }
+#date-section, #location-section, #contact-section { min-height: 0; }
+#date-section .invitation-event-details { margin: 0; padding: 0; border: 0; }
+#date-section .date-title { font-family: 'Times New Roman', serif !important; }
+#date-section .btn-nav { align-self: center; }
+#location-section .address-block { text-align: center; }
+.venue-map-link { display: inline-block; margin-top: 22px; }
+#contact-section .glass-card > h3 { font-family: 'Times New Roman', serif !important; color: #514b40; font-size: 27px; margin: 0 0 12px; }
+#contact-section .contact-list { display: flex; flex-direction: column; gap: 14px; margin-top: 22px; }
+#contact-section .contact-card { padding: 18px 12px; flex-wrap: wrap; justify-content: center; text-align: center; }
+#contact-section .contact-info { flex: 1 1 100%; }
+#contact-section .contact-name, #contact-section .contact-phone { color: #514b40; font-family: 'Times New Roman', serif; }
+#contact-section .contact-actions { margin-top: 12px; }
+#rsvp-section > #wishes-section { padding-right: 0; padding-left: 0; }
+
+/* Continuous invitation layout inspired by the Joyvite reference. */
+#main-content {
+    position: relative;
+    padding: 56px 0 20px;
+    background: linear-gradient(180deg, #faf8f1, #fbf9f4 45%, #f7f3ea);
+    overflow: hidden;
+}
+#main-content::before {
+    content: '';
+    display: block;
+    width: 110px;
+    height: 135px;
+    margin: 0 auto 28px;
+    background: url('img/floral-invitation-top-left.png') center / contain no-repeat;
+    opacity: .9;
+}
+#main-content > .section-container,
+#main-content > .card-countdown-section,
+#main-content > .reference-rsvp-section {
+    min-height: 0;
+    margin: 0;
+    padding: 28px 36px;
+    background: transparent;
+    clip-path: none;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none;
+}
+#main-content > .section-container > .glass-card {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    box-shadow: none;
+    background: transparent;
+}
+#main-content .glass-card::before,
+#main-content .glass-card::after { display: none !important; }
+#main-content #greeting-section .glass-card > h3 {
+    font-family: 'Times New Roman', Times, serif !important;
+    font-size: 24px;
+    color: #6a3345 !important;
+    margin-bottom: 18px;
+}
+#main-content #greeting-section .glass-card > p { color: #706457 !important; }
+#main-content #greeting-section .invitation-parents { margin: 23px 0; }
+#main-content #greeting-section .couple-name { font-size: 15px; line-height: 1.7; }
+#main-content #greeting-section .pengantin-name { font-size: 23px; color: var(--wine) !important; margin: 18px 0 12px !important; }
+#main-content #date-section { padding-top: 34px; padding-bottom: 22px; }
+#main-content #location-section { padding-top: 20px; padding-bottom: 32px; }
+.event-detail-label { color: #8b6872; font-family: 'Times New Roman', serif; font-size: 11px; letter-spacing: 2.5px; margin-bottom: 12px; }
+.date-title, .date-time, .address-line { color: #5f554b; font-size: 15px; line-height: 1.8; }
+#date-section .invitation-event-details { gap: 19px; }
+.time-block { margin-top: 20px; }
+.venue-map-link { margin-top: 18px; }
+#main-content #programme-section .glass-card > h3,
+#main-content #contact-section .glass-card > h3,
+.seamless-rsvp-title,
+#main-content .card-countdown-section > h3 {
+    font-family: 'Times New Roman', Times, serif !important;
+    color: #8b6872 !important;
+    font-size: 13px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 400;
+    margin: 0 0 22px;
+    text-align: center;
+}
+#main-content .schedule-list { margin: 0; }
+#main-content .schedule-item { flex-direction: row; align-items: baseline; justify-content: center; gap: 18px; padding: 10px 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+#main-content .schedule-time { font-family: 'Times New Roman', serif; font-size: 16px; color: #6a3345; min-width: 42px; padding: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+#main-content .schedule-desc { font-family: 'Times New Roman', serif; font-size: 15px; color: #65594d; text-align: left; flex: 0 1 155px; }
+#main-content .card-countdown-section { padding-top: 32px; padding-bottom: 42px; }
+#main-content .countdown-grid { padding-top: 0; }
+#main-content .reference-rsvp-section { padding-top: 28px; }
+.reference-rsvp-form { max-width: 350px; }
+.reference-rsvp-form > label, .reference-rsvp-form legend { font-size: 13px; color: #746354; }
+.reference-rsvp-form input:not([type='radio']), .reference-rsvp-form textarea { background: #ffffff80; border-color: #d8cfc1; }
+#rsvp-section > #wishes-section { min-height: 0; padding-top: 35px; padding-bottom: 15px; background: transparent; opacity: 1 !important; transform: none !important; }
+#main-content #wishes-section .guestbook-card > h3 { font-family: 'Sacramento', cursive !important; font-size: 32px; line-height: 1.3; color: #6a3345; margin-bottom: 24px; }
+#wishes-section .guestbook-scroll-viewport { min-height: 0; height: auto; max-height: 280px; }
+#wishes-section .guestbook-card { padding-bottom: 0; }
+.guestbook-scroll-container, .guestbook-scroll-viewport { background: transparent; border: 0; }
+#main-content #contact-section { padding-top: 28px; padding-bottom: 42px; }
+#contact-section .contact-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; width: 100%; }
+#contact-section .contact-card { display: flex; flex-direction: column; align-items: center; min-width: 0; background: transparent; border: 0; padding: 0; box-shadow: none; }
+#contact-section .contact-info { flex: initial; width: 100%; }
+#contact-section .contact-actions { justify-content: center; }
+#contact-section .contact-actions .btn-nav { padding: 10px 18px; }
+#contact-section .contact-icon-actions { display: flex; gap: 10px; margin-top: 16px; }
+.contact-icon-button { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; text-decoration: none; border: 1px solid #89576933; color: var(--wine); background: #fffaf5; box-shadow: 0 3px 10px #510c280a; transition: background .18s ease, color .18s ease, transform .18s ease; }
+.contact-icon-button svg { width: 20px; height: 20px; display: block; }
+.contact-phone-button svg { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.contact-whatsapp-button svg { fill: currentColor; }
+.contact-icon-button:hover { color: #fffaf5; background: var(--wine); transform: translateY(-2px); }
+.contact-icon-button:focus-visible { outline: 2px solid #a87a8a; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) { .contact-icon-button { transition: none; } .contact-icon-button:hover { transform: none; } }
+
+/* Compact, balanced wishes and contact layout for phone screens. */
+#wishes-section .guestbook-card { min-height: 0; padding: 0; }
+#wishes-section .guestbook-scroll-container { margin: 0; }
+#wishes-section .guestbook-scroll-viewport { height: auto; min-height: 0; max-height: 240px; }
+#wishes-section .guestbook-scroll-track { gap: 16px; padding: 8px 0; }
+#wishes-section .guestbook-slide-content { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 18px 12px; text-align: center; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+#wishes-section .guestbook-message { padding: 0; margin: 0; border: 0; color: #6d6056; font-family: 'Times New Roman', serif; font-size: 15px; line-height: 1.65; overflow-wrap: anywhere; }
+#wishes-section .guestbook-name { padding: 0; margin: 0; color: var(--wine); font-family: 'Times New Roman', serif; font-size: 14px; font-weight: 400; }
+#main-content #contact-section { padding-top: 24px; padding-bottom: 30px; }
+#main-content #contact-section .glass-card > h3 { margin-bottom: 10px; }
+#contact-section .contact-modal-intro { margin: 0 auto 24px; max-width: 250px; font-size: 13px; line-height: 1.6; }
+#contact-section .contact-list { gap: 12px; margin-top: 0; align-items: stretch; }
+#contact-section .contact-card { justify-content: flex-start; text-align: center; transform: none; }
+#contact-section .contact-info { text-align: center; }
+#contact-section .contact-name { display: flex; align-items: center; justify-content: center; min-height: 42px; font-size: 16px; line-height: 1.3; font-weight: 400; }
+#contact-section .contact-phone { font-size: 12px; line-height: 1.5; letter-spacing: .3px; color: #8a776b; margin-top: 4px; }
+#contact-section .contact-phone a { color: inherit !important; text-decoration: none !important; }
+#contact-section .contact-icon-actions { gap: 9px; margin-top: 14px; }
+#contact-section .contact-icon-button { flex: 0 0 44px; background: #fffaf5; border-color: #89576933; box-shadow: 0 3px 10px #510c2808; }
+#contact-section .contact-icon-button:hover { background: var(--wine); }
+#main-content .footer { padding: 22px 28px 28px; margin-top: 4px; text-align: center; }
+#main-content .footer p { margin: 6px 0; font-size: 12px; line-height: 1.6; color: #8a776b; }
+#main-content .footer .footer-couple { font-size: 15px; color: #6a3345; }
+#backToTop { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 40px; padding: 9px 19px; font-family: 'Times New Roman', serif; font-size: 12px; font-weight: 400; color: var(--wine); background: transparent; border: 1px solid #89576933; border-radius: 22px; box-shadow: none; }
+#backToTop::before { content: '↑'; font-size: 15px; }
+#musicToggle { top: auto !important; bottom: max(14px, env(safe-area-inset-bottom)) !important; right: 14px !important; width: 36px; height: 36px; min-width: 0; padding: 0; font-size: 15px; box-shadow: 0 3px 12px #510c281a; }
+
+/* A location marker rather than a filled navigation button. */
+#location-section .venue-map-link { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-width: 88px; min-height: 72px; margin-top: 18px; padding: 5px 10px; color: var(--wine); background: transparent; border: 0; border-radius: 0; box-shadow: none; text-decoration: none; }
+.venue-map-link > svg { display: block; width: 28px; height: 35px; overflow: visible; fill: #f0e4dd; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: transform .18s ease; }
+.venue-map-link > svg circle { fill: var(--paper); }
+.venue-map-link > span { font-family: 'Times New Roman', serif; font-size: 12px; letter-spacing: .4px; }
+.venue-map-link:hover > svg { transform: translateY(-3px); }
+.venue-map-link:focus-visible { outline: 2px solid #a87a8a; outline-offset: 4px; border-radius: 5px; }
+@media (prefers-reduced-motion: reduce) { .venue-map-link > svg { transition: none; } .venue-map-link:hover > svg { transform: none; } }
+
+/* Calendar keeps the same light treatment as the venue marker. */
+.save-date-icon { align-self: center; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-width: 88px; min-height: 72px; padding: 5px 10px; color: var(--wine); background: transparent; border: 0; border-radius: 0; box-shadow: none; cursor: pointer; }
+.save-date-icon > svg { display: block; width: 32px; height: 35px; fill: #f0e4dd; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: transform .18s ease; }
+.save-date-icon > svg path { fill: none; }
+.save-date-icon > svg text { fill: currentColor; stroke: none; font-family: 'Times New Roman', serif; font-size: 13px; }
+.save-date-icon > span { font-family: 'Times New Roman', serif; font-size: 12px; letter-spacing: .4px; }
+.save-date-icon:hover > svg { transform: translateY(-3px); }
+.save-date-icon:focus-visible { outline: 2px solid #a87a8a; outline-offset: 4px; border-radius: 5px; }
+@media (prefers-reduced-motion: reduce) { .save-date-icon > svg { transition: none; } .save-date-icon:hover > svg { transform: none; } }
+#contact-section .contact-name { font-size: 17px; }
+#contact-section .contact-phone { font-size: 14px; margin-top: 5px; }
+#contact-section .contact-modal-intro { color: #7d7061; font-size: 14px; line-height: 1.7; }
+.footer { background: transparent; padding-top: 22px; border-top: 1px solid #9b7d681f; }
+@media (max-width: 380px) {
+    #main-content > .section-container,
+    #main-content > .card-countdown-section,
+    #main-content > .reference-rsvp-section { padding-right: 26px; padding-left: 26px; }
+}

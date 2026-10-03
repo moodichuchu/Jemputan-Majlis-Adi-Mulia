@@ -1,0 +1,866 @@
+/* ================================================================
+   01. LOCAL FONTS
+   Final layout layer loaded after style.css to prevent rule conflicts.
+   ================================================================ */
+@font-face {
+    font-family: 'Eilee Smith';
+    src: url('fonts/EileeSmith.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Prata';
+    src: url('fonts/Prata.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spartan';
+    src: url('fonts/Spartan.woff2') format('woff2');
+    font-display: swap;
+}
+
+/* ================================================================
+   02. GLOBAL PAGE, WIDTH, AND MEDIA SAFETY
+   Change --invitation-width to adjust the maximum desktop card width.
+   ================================================================ */
+html {
+    background: #171216;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --invitation-width: 860px;
+    --page-gutter: clamp(24px, 6vw, 72px);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+    max-width: 100%;
+}
+
+body {
+    width: 100%;
+    max-width: var(--invitation-width);
+    min-height: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+    background: #2a2024;
+    box-shadow: 0 0 70px rgba(0, 0, 0, 0.62);
+    font-family: 'Spartan', sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: 'Spartan', sans-serif;
+}
+
+h2,
+h3,
+.section-container > h2,
+.glass-card > h3,
+.section-container > .glass-card > h3,
+.cover-date,
+.date-title {
+    font-family: 'Prata', serif !important;
+    font-weight: 400;
+}
+
+/* ================================================================
+   03. SHARED BACKGROUND AND OPENING OVERLAY
+   ================================================================ */
+#mainBackground,
+#overlay {
+    left: 50%;
+    right: auto;
+    width: min(100%, var(--invitation-width));
+    transform: translateX(-50%);
+}
+
+#mainBackground {
+    background-position: center top;
+}
+
+#overlay {
+    background: linear-gradient(180deg, rgba(24, 17, 21, 0.5), rgba(24, 17, 21, 0.76));
+}
+
+/* ================================================================
+   04. SHARED CONTENT ALIGNMENT
+   ================================================================ */
+.overlay-content,
+.hero-text,
+.section-container > h2,
+.section-container > .glass-card,
+.section-container > .guestbook-card {
+    width: 100%;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.overlay-content {
+    padding: 24px;
+}
+
+/* ================================================================
+   05. COVER AND STANDARD SECTION SPACING
+   ================================================================ */
+.hero,
+.section-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(24px, 3.5vh, 38px) var(--page-gutter);
+}
+
+.hero {
+    min-height: 100svh;
+    padding-top: clamp(56px, 8vh, 88px);
+    padding-bottom: clamp(56px, 8vh, 88px);
+}
+
+.section-container + .section-container {
+    padding-top: clamp(12px, 2vh, 22px);
+}
+
+.section-container.compact-section,
+.section-container + .section-container.compact-section {
+    min-height: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.compact-section > h2 {
+    margin-bottom: 10px;
+}
+
+.compact-section .glass-card {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.section-container > h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+}
+
+.section-container > h2::after {
+    bottom: 0;
+}
+
+.glass-card > h3,
+.section-container > .glass-card > h3 {
+    margin-bottom: 14px;
+}
+
+.hero-text {
+    max-width: 700px;
+    text-align: center;
+}
+
+/* ================================================================
+   06. COVER TYPOGRAPHY, STACKED NAMES, AND DIVIDER
+   ================================================================ */
+.cover-kicker,
+.cover-date,
+.cover-venue,
+.scroll-cue,
+.floating-text {
+    color: #f4e4d1 !important;
+    opacity: 1;
+}
+
+.cover-venue,
+.scroll-cue {
+    color: rgba(244, 228, 209, 0.82) !important;
+}
+
+.cover-divider {
+    width: min(210px, 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    color: #d7b36c;
+}
+
+.cover-divider::before,
+.cover-divider::after {
+    flex: 1 1 auto;
+    width: auto;
+}
+
+.couple-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.08em;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    font-family: 'Eilee Smith', cursive !important;
+    font-weight: 400;
+}
+
+.couple-stack > span {
+    display: block;
+    width: 100%;
+}
+
+.couple-stack-amp {
+    font-family: 'Eilee Smith', cursive;
+    font-size: 0.72em;
+    font-weight: 400;
+    line-height: 0.9;
+    color: #d7b36c;
+}
+
+.seal-names,
+.pengantin-name,
+.pengantin-amp,
+.couple-name,
+.couple-amp {
+    font-family: 'Eilee Smith', cursive !important;
+    font-weight: 400 !important;
+}
+
+.seal-action,
+.cover-kicker,
+.cover-venue,
+.scroll-cue,
+.countdown-label,
+.fab-label {
+    font-family: 'Spartan', sans-serif !important;
+}
+
+/* ================================================================
+   07. CONTENT CARDS
+   ================================================================ */
+.glass-card,
+.guestbook-card {
+    box-sizing: border-box;
+    padding: clamp(32px, 5vw, 54px);
+    border-radius: 4px;
+    transform: none;
+}
+
+.glass-card:hover,
+.guestbook-card:hover {
+    transform: none;
+}
+
+/* ================================================================
+   08. COUNTDOWN TIMER
+   ================================================================ */
+.countdown-grid {
+    width: min(100%, 560px);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: start;
+    justify-content: center;
+    gap: 5px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.countdown-item,
+.flip-card {
+    min-width: 0;
+    width: 100%;
+}
+
+.flip-value {
+    font-size: clamp(1.05rem, 5vw, 1.45rem);
+    color: #f8ead7;
+}
+
+.countdown-label {
+    font-size: clamp(0.48rem, 2.1vw, 0.62rem);
+    color: rgba(248, 234, 215, 0.82);
+}
+
+/* ================================================================
+   09. WEDDING DETAILS, BUTTONS, FORMS, AND CONTACTS
+   ================================================================ */
+.butiran-grid {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+}
+
+.butiran-grid .address-block,
+.butiran-grid .actions {
+    grid-column: 1 / -1;
+}
+
+.butiran-grid > .date-block {
+    grid-column: 1 / -1;
+}
+
+.date-block,
+.address-block,
+.actions,
+.schedule-list,
+.contact-list,
+.contact-card,
+#rsvp-form,
+.btn-row {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.btn-row,
+.map-buttons,
+.contact-actions {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn-row .btn-nav,
+.map-buttons .btn-nav {
+    flex: 1 1 130px;
+    margin: 0;
+}
+
+.save-date-row .btn-nav {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 0;
+    padding: 10px 18px;
+    margin: 0 auto;
+    font-size: 0.82rem;
+}
+
+.programme-rsvp-btn {
+    display: block;
+    width: auto;
+    min-width: 150px;
+    padding: 10px 20px;
+    margin: 22px auto 0;
+    font-size: 0.82rem;
+}
+
+/* RSVP modal opened from the fixed bottom RSVP button. */
+.rsvp-modal-content {
+    width: min(92vw, 520px);
+    max-height: min(88svh, 760px);
+    overflow-y: auto;
+    padding: clamp(28px, 5vw, 44px);
+    text-align: center;
+}
+
+.rsvp-modal-content h3 {
+    margin: 0 0 10px;
+    font-family: 'Prata', serif;
+    font-size: clamp(1.8rem, 5vw, 2.35rem);
+    font-weight: 400;
+}
+
+.rsvp-modal-intro {
+    margin: 0 0 22px;
+    color: #66565b;
+    font-size: 0.86rem;
+}
+
+.rsvp-modal-content #rsvp-form {
+    display: grid;
+    gap: 12px;
+}
+
+.rsvp-modal-content textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.rsvp-success {
+    display: none;
+    margin-top: 14px;
+    color: var(--dark-gold);
+    font-size: 0.86rem;
+}
+
+/* Contacts modal opened from the fixed bottom Contact button. */
+.contact-modal-content {
+    width: min(92vw, 620px);
+    max-height: min(88svh, 760px);
+    overflow-y: auto;
+    padding: clamp(28px, 5vw, 44px);
+    text-align: center;
+}
+
+.contact-modal-content h3 {
+    margin: 0 0 10px;
+    font-family: 'Prata', serif;
+    font-size: clamp(1.8rem, 5vw, 2.35rem);
+    font-weight: 400;
+}
+
+.contact-modal-intro {
+    margin: 0 0 22px;
+    color: #66565b;
+    font-size: 0.86rem;
+}
+
+.contact-modal-content .contact-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.contact-modal-content .contact-card {
+    min-height: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.contact-modal-content .contact-info {
+    text-align: left;
+}
+
+/* Venue modal opened from the fixed bottom Location button. */
+.location-modal-content {
+    width: min(92vw, 500px);
+    padding: clamp(30px, 6vw, 48px);
+    text-align: center;
+}
+
+.location-pin {
+    margin-bottom: 12px;
+    font-size: 2rem;
+}
+
+.location-modal-content h3 {
+    margin: 0 0 18px;
+    font-family: 'Prata', serif;
+    font-size: clamp(1.8rem, 5vw, 2.35rem);
+    font-weight: 400;
+}
+
+.location-venue-name {
+    margin: 0 0 6px;
+    color: #4d3d43;
+    font-family: 'Prata', serif;
+    font-size: 1.05rem;
+}
+
+.location-address {
+    margin: 0 0 24px;
+    color: #75656a;
+    font-size: 0.86rem;
+}
+
+.location-modal-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.location-modal-actions .btn-nav {
+    width: 100%;
+    margin: 0;
+}
+
+@media (max-width: 420px) {
+    .location-modal-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+input,
+select,
+textarea,
+.btn-submit {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.contact-info {
+    min-width: 0;
+    text-align: left;
+}
+
+.contact-name,
+.contact-phone,
+.address-line,
+.guestbook-message,
+.guestbook-name {
+    overflow-wrap: anywhere;
+}
+
+/* ================================================================
+   10. FIXED BOTTOM NAVIGATION
+   ================================================================ */
+.fab-container {
+    position: fixed;
+    left: 50%;
+    right: auto;
+    bottom: 0;
+    width: min(100%, var(--invitation-width));
+    height: 68px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+    gap: 0;
+    padding: 6px 12px;
+    transform: translateX(-50%);
+    background: rgba(244, 235, 226, 0.96);
+    border-top: 1px solid rgba(126, 87, 73, 0.22);
+    box-shadow: 0 -8px 30px rgba(20, 12, 16, 0.22);
+    backdrop-filter: blur(14px);
+}
+
+.fab {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+    height: 56px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 5px 8px;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #59444a;
+    box-shadow: none;
+    font-size: 1rem;
+}
+
+.fab-label,
+.fab:hover .fab-label {
+    display: block;
+    margin: 0;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.fab:hover,
+.fab:active {
+    padding: 5px 8px;
+    border-radius: 0;
+    transform: none;
+    background: transparent;
+    color: #9d793b;
+}
+
+#musicToggle,
+#darkModeToggle {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+#musicToggle {
+    right: max(16px, calc(50% - (var(--invitation-width) / 2) + 16px)) !important;
+}
+
+#darkModeToggle {
+    display: none !important;
+}
+
+/* ================================================================
+   11. DESKTOP AND TABLET LAYOUT (701px AND ABOVE)
+   ================================================================ */
+@media (min-width: 701px) {
+    .invitation-seal {
+        width: 260px;
+        height: 260px;
+    }
+
+    .seal-names {
+        font-size: 1.65rem;
+    }
+
+    .floating-text {
+        font-size: clamp(3.5rem, 7vw, 5.6rem);
+    }
+
+    .section-container > h2 {
+        font-size: clamp(2.5rem, 5vw, 3.7rem);
+    }
+
+    .contact-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .contact-card {
+        min-height: 160px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .fab-container {
+        height: 72px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+/* ================================================================
+   12. PHONE LAYOUT (700px AND BELOW)
+   ================================================================ */
+@media (max-width: 700px) {
+    :root {
+        --invitation-width: 100%;
+        --page-gutter: clamp(16px, 5vw, 26px);
+    }
+
+    body {
+        max-width: none;
+        box-shadow: none;
+    }
+
+    .butiran-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .butiran-grid .address-block,
+    .butiran-grid .actions {
+        grid-column: auto;
+    }
+
+    .contact-card {
+        align-items: center;
+    }
+}
+
+/* ================================================================
+   13. SMALL PHONE LAYOUT (480px AND BELOW)
+   ================================================================ */
+@media (max-width: 480px) {
+    .hero,
+    .section-container {
+        padding: 20px 18px 30px;
+    }
+
+    .hero {
+        min-height: 100svh;
+        padding-top: 54px;
+        padding-bottom: 78px;
+    }
+
+    .glass-card,
+    .guestbook-card {
+        width: 100%;
+        max-width: none;
+        padding: 28px 18px;
+    }
+
+    .floating-text {
+        font-size: clamp(2.35rem, 12vw, 3.3rem);
+    }
+
+    .section-container > h2 {
+        font-size: 2rem;
+    }
+}
+
+/* ================================================================
+   14. EXTRA-SMALL PHONE LAYOUT (360px AND BELOW)
+   ================================================================ */
+@media (max-width: 360px) {
+    .hero,
+    .section-container {
+        padding: 18px 12px 26px;
+    }
+
+    .hero {
+        padding-top: 48px;
+        padding-bottom: 74px;
+    }
+
+    .glass-card,
+    .guestbook-card {
+        padding: 24px 14px;
+    }
+
+    .invitation-seal {
+        width: min(210px, 72vw);
+        height: min(210px, 72vw);
+    }
+
+    .seal-names {
+        font-size: 1.2rem;
+    }
+
+    .countdown-grid {
+        gap: 2px;
+    }
+
+    .countdown-separator {
+        font-size: 1rem;
+    }
+
+    .btn-nav,
+    .btn-small,
+    .btn-submit {
+        padding-right: 10px;
+        padding-left: 10px;
+        font-size: 0.82rem;
+    }
+
+    .contact-card {
+        padding: 12px 10px;
+        gap: 8px;
+    }
+
+    .fab-container {
+        padding-right: 4px;
+        padding-left: 4px;
+    }
+
+    .fab {
+        padding-right: 2px;
+        padding-left: 2px;
+    }
+
+    .fab-label {
+        font-size: 0.5rem;
+        letter-spacing: 0.04em;
+    }
+}
+
+/* ================================================================
+   15. SHORT LANDSCAPE PHONE LAYOUT
+   ================================================================ */
+@media (orientation: landscape) and (max-height: 560px) {
+    .hero,
+    .section-container {
+        min-height: auto;
+        padding-top: 64px;
+        padding-bottom: 88px;
+    }
+
+    #overlay {
+        overflow-y: auto;
+        padding: 32px 0 80px;
+    }
+
+    .invitation-seal {
+        width: 190px;
+        height: 190px;
+    }
+}
+
+/* ================================================================
+   16. VIEWPORT-TRIGGERED SECTION REVEALS
+   Sections appear while visible and disappear after leaving view.
+   ================================================================ */
+.reveal-ready .section-container,
+.reveal-ready .footer {
+    opacity: 0;
+    transform: translateY(34px);
+    transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+/* ================================================================
+   17. MANUALLY SCROLLABLE GUEST-WISHES FEED
+   Entries are ordered newest-first by script.js.
+   ================================================================ */
+.guestbook-scroll-container {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.guestbook-scroll-viewport {
+    height: clamp(300px, 52vh, 480px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    border-radius: 4px;
+    overscroll-behavior: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.guestbook-scroll-track {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 30px 4px;
+}
+
+.guestbook-scroll-viewport::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.guestbook-scroll-entry {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.guestbook-scroll-entry .guestbook-slide-content {
+    min-height: 0;
+    padding: 22px 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .guestbook-scroll-viewport {
+        height: auto;
+        max-height: none;
+        overflow-y: auto;
+    }
+}
+
+.reveal-ready .section-container.section-visible,
+.reveal-ready .footer.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal-ready .section-container,
+    .reveal-ready .footer {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

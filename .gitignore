@@ -1,0 +1,9 @@
+*-preview.jpg
+*.before-opening-trial.*
+opening-screen.css
+opening-screen-preview.jpg
+smooth-seal-transition.jpg
+upward-card-reveal.jpg
+.env
+.env.*
+node_modules/

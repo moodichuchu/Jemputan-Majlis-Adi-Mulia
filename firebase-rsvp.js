@@ -47,7 +47,7 @@
                 nama: form.nama.trim(),
                 kehadiran: form.kehadiran,
                 jumlah: form.kehadiran === 'Attending' ? Number(form.jumlah) : 0,
-                ucapan: form.ucapan.trim(),
+                ucapan: (form.ucapan || '').trim() || 'Congratulations',
                 timestamp: firebase.database.ServerValue.TIMESTAMP
             };
             if (!data.nama || data.nama.length > 100) throw new Error('Please enter a name of 1–100 characters.');

@@ -851,7 +851,7 @@ function renderGuestbook(){
         
         entry.innerHTML = `
             <div class="guestbook-slide-content">
-                <div class="guestbook-message">"${ucapan || 'No message'}"</div>
+                <div class="guestbook-message">"${ucapan}"</div>
                 <div class="guestbook-name">${nama}</div>
             </div>`;
         sliderEl.appendChild(entry);

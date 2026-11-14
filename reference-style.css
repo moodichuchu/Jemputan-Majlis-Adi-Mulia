@@ -326,3 +326,7 @@ body.modal-open { background: transparent; box-shadow: none; }
     #main-content > .card-countdown-section,
     #main-content > .reference-rsvp-section { padding-right: 26px; padding-left: 26px; }
 }
+
+/* Keep the single contact centred at every screen width. */
+#contact-section .contact-list { grid-template-columns: minmax(0, 1fr); justify-items: center; }
+#contact-section .contact-card:only-child { width: 100%; max-width: 320px; margin-inline: auto; align-items: center; }

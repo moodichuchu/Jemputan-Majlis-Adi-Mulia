@@ -258,7 +258,7 @@ body.modal-open { background: transparent; box-shadow: none; }
 #wishes-section .guestbook-card { padding-bottom: 0; }
 .guestbook-scroll-container, .guestbook-scroll-viewport { background: transparent; border: 0; }
 #main-content #contact-section { padding-top: 28px; padding-bottom: 42px; }
-#contact-section .contact-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; width: 100%; }
+#contact-section .contact-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; width: 100%; }
 #contact-section .contact-card { display: flex; flex-direction: column; align-items: center; min-width: 0; background: transparent; border: 0; padding: 0; box-shadow: none; }
 #contact-section .contact-info { flex: initial; width: 100%; }
 #contact-section .contact-actions { justify-content: center; }
